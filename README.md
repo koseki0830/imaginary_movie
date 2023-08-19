@@ -30,3 +30,6 @@
 ### その後の機能
 - 管理画面
 - オートコンプリート
+
+### 画面遷移図
+https://www.figma.com/file/LdIGCpMrroNfbUDALBBrfs/%E8%99%9A%E6%A7%8B%E6%98%A0%E7%94%BB?type=design&node-id=0%3A1&mode=design&t=CYsjR0ztfSWWUk68-1

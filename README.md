@@ -26,6 +26,8 @@
 - お気に入り
 - 検索
 - レコメンド
+- レビューへのいいね機能
+- レビューへのコメント機能
 
 ### その後の機能
 - 管理画面
@@ -33,3 +35,6 @@
 
 ### 画面遷移図
 https://www.figma.com/file/LdIGCpMrroNfbUDALBBrfs/%E8%99%9A%E6%A7%8B%E6%98%A0%E7%94%BB?type=design&node-id=0%3A1&mode=design&t=CYsjR0ztfSWWUk68-1
+
+### ER図
+https://i.gyazo.com/abd71a8669caebccf80ec5864cf58ef3.png

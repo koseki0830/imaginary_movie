@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path # ユーザー作成後にログインするよう変更予定
+      redirect_to login_path # ユーザー作成後にログインするよう変更予定
     else
       render :new
     end

@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   root 'users#new'
   resources :users
+
+  resources :movies
 end

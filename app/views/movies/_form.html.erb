@@ -17,8 +17,11 @@
 
   <div class="mb-4">
     <%= f.label :thumbnail, class: "block text-gray-700 text-sm font-bold mb-2" %>
-    <%= f.file_field :thumbnail, class: 'w-full py-2 px-3 border rounded focus:outline-none focus:border-indigo-500' %>
+    <%= f.file_field :thumbnail, class: 'w-full py-2 px-3 border rounded focus:outline-none focus:border-indigo-500', accept: 'image/*', onchange: 'previewImage(preview)' %>
     <%= f.hidden_field :thumbnail_cache %>
+    <% if movie.thumbnail.present? %>
+      <%= image_tag movie.thumbnail.url, class: 'rounded-circle mt-3', id: 'preview', size: '100x100' %>
+    <% end %>
   </div>
 
   <div class="flex items-center justify-between sm:col-span-2">

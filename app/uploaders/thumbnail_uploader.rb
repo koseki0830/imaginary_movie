@@ -2,9 +2,9 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
 
-  include CarrierWave::MiniMagick
+  # include CarrierWave::MiniMagick
 
-  process resize_tofit: [400, 200]
+  # process resize_tofit: [400, 200]
 
   # Choose what kind of storage to use for this uploader:
   storage :file

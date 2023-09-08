@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
   attr_accessor :thumbnail_cache
-  mount_uploader :thumnbnail, ThumbnailUploader
+  mount_uploader :thumbnail, ThumbnailUploader
   belongs_to :user
 
   validates :title, presence: true

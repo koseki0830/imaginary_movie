@@ -8,5 +8,26 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets"
-  }
+  },
+  "description": "## サービス概要 架空の映画についてのレビューを投稿するアプリです。 ユーザーは架空の映画のあらすじを投稿・それに対するレビューを投稿することができます。",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runteq/imaginary_movie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/runteq/imaginary_movie/issues"
+  },
+  "homepage": "https://github.com/runteq/imaginary_movie#readme"
 }

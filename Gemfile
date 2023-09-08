@@ -74,5 +74,8 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'sorcery'
-gem 'pry-rails'
+gem "sorcery"
+gem "pry-rails"
+
+gem "carrierwave", "~> 3.0"
+gem "mini_magick"

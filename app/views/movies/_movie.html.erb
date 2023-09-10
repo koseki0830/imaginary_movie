@@ -7,8 +7,12 @@
     <p class="text-sm">上映時間：<%= movie.screening_time %>分<p>
     <p class="text-sm">カテゴリー：</p>
     <p class="text-sm">あらすじ</p>
-    <p class="mb-8 text-gray-500" ><%= movie.synopsis %></p>
-
+    <% if movie.synopsis.length <= 100 %>
+      <p class="mb-8 text-gray-500"><%= movie.synopsis %></p>
+    <% else %>
+      <p class="mb-8 text-gray-500" ><%= truncate(movie.synopsis, length: 100) %></p>
+      <p class="mb-8 text-gray-500" ><%= link_to '>>続きを読む', movie_path(movie) %></p>
+    <% end %>
     <div class="mt-auto flex items-end justify-between">
       <div class="flex items-center gap-2" >
         <div>

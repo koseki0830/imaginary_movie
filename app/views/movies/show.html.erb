@@ -1,0 +1,27 @@
+<section class="bg-gray-100 py-8">
+<div class="container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Left Column: Movie Poster -->
+        <div class="md:col-span-1">
+          <%= image_tag @movie.thumbnail.url, class: "w-full rounded-lg shadow-lg" %>
+        </div>
+
+        <!-- Middle Column: Movie Details -->
+        <div class="md:col-span-2">
+            <h1 class="text-3xl font-semibold"><%= @movie.title %></h1>
+            <p class="text-gray-500 mt-2">上映時間：<%= @movie.screening_time %>分</p>
+            <p class="text-gray-500 mt-2">カテゴリー：</p>
+            <p class="text-gray-500 mt-4">あらすじ</p>
+            <p class="text-bg-black mt-4"><%= @movie.synopsis %></p>
+        </div>
+        <div class="mt-auto flex items-end justify-between">
+          <div class="flex items-center gap-2" >
+            <div>
+              <span class="block text-indigo-500"><%= @movie.user.name %></span>
+                <p class="text-sm">投稿日：<%= @movie.created_at.strftime("%Y/%m/%d") %></p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+</section>

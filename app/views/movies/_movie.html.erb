@@ -1,0 +1,21 @@
+<div class="flex flex-col overflow-hidden rounded-lg border bg-white">
+  <%= image_tag movie.thumbnail_url, class: "group relative block h-48 overflow-hidden bg-gray-100 md:h-64" %>
+  <div class="flex flex-1 flex-col p-4 sm:p-6">
+    <h2 class="mb-2 text-lg font-semibold text-gray-800">
+      <%= link_to movie.title, movie_path(movie), class: "transition duration-100 hover:text-indigo-500 active:text-indigo-600" %>
+    </h2>
+    <p class="text-sm">上映時間：<%= movie.screening_time %>分<p>
+    <p class="text-sm">カテゴリー：</p>
+    <p class="text-sm">あらすじ</p>
+    <p class="mb-8 text-gray-500" ><%= movie.synopsis %></p>
+
+    <div class="mt-auto flex items-end justify-between">
+      <div class="flex items-center gap-2" >
+        <div>
+          <span class="block text-indigo-500"><%= movie.user.name %></span>
+          <p class="text-sm">投稿日：<%= movie.created_at %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

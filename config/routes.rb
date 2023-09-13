@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :users
 
   resources :movies do
-    resources :reviews, only: %i[new create update edit show destroy]
+    resources :reviews, only: [:new, :create, :edit, :update, :show, :destroy]
   end
 end

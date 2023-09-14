@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   root 'users#new'
   resources :users
 
-  resources :movies
+  resources :movies do
+    resources :reviews, only: [:new, :create, :edit, :update, :show, :destroy]
+  end
 end

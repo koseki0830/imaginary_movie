@@ -3,4 +3,5 @@ class Review < ApplicationRecord
   belongs_to :user
 
   validates :contains_spoiler, inclusion: [true, false]
+  validates :content, presence: true
  end

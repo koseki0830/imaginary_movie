@@ -28,3 +28,16 @@
     </div>
 </div>
 </section>
+
+<%= link_to 'レビューを書く', new_movie_review_path(@movie), data: { turbo_frame: 'new_item' }, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+
+
+
+<div data-modal-target="modal"
+    data-controller="modal"
+    data-action="turbo:frame-load->modal#open turbo:submit-end->modal#close"
+    class="hidden fixed m-auto w-screen h-screen top-0 left-0 bg-gray-700/50 z-10">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-max h-max bg-white p-10">
+    <%= turbo_frame_tag "new_item" %>
+  </div>
+</div>

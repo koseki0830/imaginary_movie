@@ -41,3 +41,23 @@
     <%= turbo_frame_tag "new_item" %>
   </div>
 </div>
+
+
+<!-- レビュー表示エリア -->
+
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">『<%= @movie.title %>』に投稿されたレビュー</h2>
+
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+      <% if @reviews.present? %>
+        <% @reviews.each do |review| %>
+          <%= render 'reviews/review', review: review %>
+        <% end %>
+      <% else %>
+        <h1 class="text-2xl">
+          レビューは投稿されていません
+      <% end %>
+    </div>
+  </div>
+</div>

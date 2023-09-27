@@ -3,6 +3,9 @@ class User < ApplicationRecord
 
   has_many :movies, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_reviews, through: :likes, source: :review
+
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }

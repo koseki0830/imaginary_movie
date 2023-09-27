@@ -11,14 +11,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-screen">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
-    <%= yield %>
-  
+    <div class="flex-grow">
+      <%= yield %>
+    </div>
     <div class="modal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -26,5 +27,6 @@
         </div>
       </div>
     </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :users
 
   resources :movies do
-    resources :reviews, only: [:new, :create, :edit, :update, :show, :destroy] do
-      resource :likes, only: [:create, :destroy]
-    end
+    resources :reviews, only: %i[new create edit update show destroy]
   end
+
+  resources :likes, only: %i[create destroy]
 end

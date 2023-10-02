@@ -1,16 +1,19 @@
-<%= form_with(model: [movie, review], local: true) do |f| %>
+<%= turbo_frame_tag 'new_item' do %>
+  <%= form_with(model: [movie, review], local: true) do |f| %>
 
-  <div class "class="sm:col-span-2" >
-    <%= f.label :content, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
-    <%= f.text_area :content, class: "h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring mb-4" %>
-  </div>
+    <div class "class="sm:col-span-2" >
+      <%= f.label :content, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
+      <%= f.text_area :content, class: "h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring mb-4" %>
+    </div>
 
-  <div>
-    <%= f.label :contains_spoiler %>
-    <%= f.check_box :contains_spoiler, {}, "true", "false" %>
-  </div>
+    <div>
+      <%= f.label :contains_spoiler %>
+      <%= f.check_box :contains_spoiler, {}, "true", "false" %>
+    </div>
 
-  <div class="flex items-center justify-between sm:col-span-2">
-    <%= f.submit class: "inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base mb-4" %>
-  </div>
+    <div class="flex items-center justify-between sm:col-span-2">
+      <%= f.submit class: "inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base mb-4" %>
+    </div>
+  <% end %>
+  <button class="text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md" data-action="click->modal#closeModal">閉じる</button>
 <% end %>

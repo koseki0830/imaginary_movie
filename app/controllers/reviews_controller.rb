@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
   def update
     @review = current_user.reviews.find(params[:id])
     if @review.update(review_params)
-      redirect_to movie_path(@review.movie)
+      render movie_path(@review.movie)
     else
       render :edit
     end

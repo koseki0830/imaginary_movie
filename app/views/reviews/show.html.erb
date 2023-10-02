@@ -14,6 +14,14 @@
               </div>
               <div class="flex flex-col items-center text-center justify-center">
                 <h2 class="font-medium title-font mt-4 text-gray-900 text-lg"><%= @review.user.name %>さんのレビュー</h2>
+                <% if current_user %>
+                  <% if current_user.own?(@review) %>
+                    <%= link_to '編集', edit_movie_review_path(@review.movie, @review), class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
+                    <%= link_to '削除', "#", class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
+                  <% else %>
+                    <%= render 'reviews/like_button', review: @review %>
+                  <% end %>
+                <% end %>
               </div>
             </div>
             <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">

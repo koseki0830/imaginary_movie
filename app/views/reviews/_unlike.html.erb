@@ -2,4 +2,5 @@
             id: "unlike-button-for-review-#{review.id}",
             data: { turbo_method: :delete } do %>
   <i class="fa-solid fa-star"></i>
+  <%= review.likes.count %>いいね
 <% end %>

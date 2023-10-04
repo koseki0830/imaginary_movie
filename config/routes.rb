@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
   root 'users#new'
-  resources :users
+  get 'mypage', to: 'users#show'
+
+  resources :users, only: %i[new create update] do
+    collection do
+      get :edit
+    end
+  end
 
   resources :movies do
     resources :reviews, only: %i[new create edit update show destroy] do
@@ -12,4 +18,5 @@ Rails.application.routes.draw do
   end
 
   resources :likes, only: %i[create destroy]
+
 end

@@ -8,4 +8,8 @@ class Review < ApplicationRecord
   validates :contains_spoiler, inclusion: [true, false]
   validates :content, presence: true
   validates :content, length: { maximum: 140 }
+
+  def comment_count
+    comments.count
+  end
  end

@@ -23,6 +23,7 @@
         </div>
       <% else %>
         <%= render 'reviews/like_button', review: review %>
+        <%= review.comment_count %>件のコメント
       <% end %>
     <% end %>
 </div>

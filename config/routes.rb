@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   root 'users#new'
   get 'mypage', to: 'users#show'
 
-  resources :users, only: %i[new create edit update]
+  resources :users, only: %i[new create update] do
+    collection do
+      get :edit
+    end
+  end
 
   resources :movies do
     resources :reviews, only: %i[new create edit update show destroy] do

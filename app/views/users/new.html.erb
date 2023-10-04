@@ -6,22 +6,22 @@
         <%= f.label :name, class: "block text-gray-700 text-sm font-bold mb-2" %>
         <%= f.text_field :name, class: "w-full p-2 border rounded shadow appearance-none text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
-
+    
       <div class="mb-4">
         <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
         <%= f.email_field :email, class: "w-full p-2 border rounded shadow appearance-none text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
-
+    
       <div class="mb-4">
         <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
         <%= f.password_field :password, class: "w-full p-2 border rounded shadow appearance-none text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
-
+    
       <div class="mb-6">
         <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
         <%= f.password_field :password_confirmation, class: "w-full p-2 border rounded shadow appearance-none text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
-
+    
       <%= f.submit '登録', class: "w-full p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded cursor-pointer" %>
     <% end %>
   </div>

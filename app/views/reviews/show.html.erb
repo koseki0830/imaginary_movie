@@ -41,3 +41,16 @@
     </section>
   </div>
 </div>
+
+<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">コメント</h2>
+<!-- コメントフォーム -->
+<%= render 'comments/form', { movie: @movie, review: @review, comment: @comment } %>
+
+<!-- コメント表示エリア -->
+<div class="space-y-4">
+  <% if @comments.present? %>
+    <% @comments.each do |comment| %>
+      <%= render 'comments/comment', comment: comment %>
+    <% end %>
+  <% end %>
+</div>

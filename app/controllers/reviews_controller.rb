@@ -35,6 +35,10 @@ class ReviewsController < ApplicationController
   # レビューの表示
   def show
     @review = Review.find(params[:id])
+
+    @movie = @review.movie
+    @comment = Comment.new
+    @comments = @review.comments.includes(:user).order(created_at: :desc)
   end
 
   # 自身が投稿したレビューの削除

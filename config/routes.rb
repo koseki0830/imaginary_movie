@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'likes/create'
-  get 'likes/destroy'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
@@ -8,7 +6,9 @@ Rails.application.routes.draw do
   resources :users
 
   resources :movies do
-    resources :reviews, only: %i[new create edit update show destroy]
+    resources :reviews, only: %i[new create edit update show destroy] do
+      resources :comments, only: %i[create destroy], shallow: true
+    end
   end
 
   resources :likes, only: %i[create destroy]

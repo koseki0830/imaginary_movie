@@ -38,6 +38,10 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def my_reviews_movies
+    @movies = current_user.reviews.includes(:movie).map(&:movie)
+  end
+
   private
   
   def set_movie

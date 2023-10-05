@@ -6,15 +6,14 @@ Rails.application.routes.draw do
   get 'mypage', to: 'users#show'
 
   resources :users, only: %i[new create update] do
-    collection do
-      get :edit
-    end
+      get :edit, on: :collection
   end
 
   resources :movies do
     resources :reviews, only: %i[new create edit update show destroy] do
       resources :comments, only: %i[create destroy], shallow: true
     end
+    get :my_reviews_movies, on: :collection
   end
 
   resources :likes, only: %i[create destroy]

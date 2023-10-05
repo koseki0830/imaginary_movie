@@ -13,9 +13,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @movies = current_user.reviews.includes(:movie)
+  end
 
-  def edit; end
+  def edit
+    @movies = current_user.reviews.includes(:movie)
+  end
 
   def update
     if @user.update(user_params)

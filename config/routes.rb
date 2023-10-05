@@ -14,8 +14,10 @@ Rails.application.routes.draw do
       resources :comments, only: %i[create destroy], shallow: true
     end
     get :my_reviews_movies, on: :collection
+    get :bookmarks, on: :collection
   end
 
   resources :likes, only: %i[create destroy]
+  resources :bookmarks, only: %i[create destroy]
 
 end

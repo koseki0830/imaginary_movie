@@ -42,6 +42,10 @@ class MoviesController < ApplicationController
     @movies = current_user.reviews.includes(:movie).map(&:movie)
   end
 
+  def bookmarks
+    @bookmarks_movies = current_user.bookmark_movies.includes(:user).order(created_at: :desc)
+  end
+
   private
   
   def set_movie

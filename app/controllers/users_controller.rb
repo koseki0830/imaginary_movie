@@ -14,10 +14,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    # マイページホームのサイドバーに、ブックマーク・レビューした映画数を表示するため変数を定義
+    @bookmarks_movies = current_user.bookmark_movies.includes(:user).order(created_at: :desc)
     @movies = current_user.reviews.includes(:movie)
   end
 
   def edit
+    # プロフィール編集画面のサイドバーにブックマーク・レビューした映画数を表示するために変数を定義
+    @bookmarks_movies = current_user.bookmark_movies.includes(:user).order(created_at: :desc)
     @movies = current_user.reviews.includes(:movie)
   end
 

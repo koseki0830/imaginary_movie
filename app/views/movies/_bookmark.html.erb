@@ -1,0 +1,6 @@
+<%= link_to bookmarks_path(movie_id: movie.id),
+            id: "bookmark-button-for-movie-#{movie.id}",
+            data: { turbo_method: :post } do %>
+              <i class="fa-regular fa-bookmark fa-beat-fade fa-xl"></i>
+              <%= movie.bookmarks.count %>件のお気に入り
+<% end %>

@@ -1,0 +1,6 @@
+<%= link_to bookmark_path(current_user.bookmarks.find_by(movie_id: movie.id)),
+            id: "unbookmark-button-for-movie-#{movie.id}",
+            data: { turbo_method: :delete } do %>
+              <i class="fa-solid fa-bookmark fa-xl"></i>
+              <%= movie.bookmarks.count %>件のお気に入り
+<% end %>

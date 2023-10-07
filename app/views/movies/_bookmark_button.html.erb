@@ -1,0 +1,5 @@
+<% if current_user.bookmark?(movie) %>
+  <%= render 'movies/unbookmark', movie: movie %>
+<% else %>
+  <%= render 'movies/bookmark', movie: movie %>
+<% end %>

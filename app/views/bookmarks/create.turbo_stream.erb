@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "bookmark-button-for-movie-#{@movie.id}" do %>
+  <%= render 'movies/unbookmark', movie: @movie %>
+<% end %>

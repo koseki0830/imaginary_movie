@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_reviews, through: :likes, source: :review
   has_many :comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_movies, through: :bookmarks, source: :movie
 
   validates :name, presence: true
   validates :email, presence: true
@@ -18,6 +20,7 @@ class User < ApplicationRecord
     id == object.user_id
   end
   
+  # レビューのいいね機能
   def like(review)
     like_reviews << review
   end
@@ -28,5 +31,18 @@ class User < ApplicationRecord
   
   def like?(review)
     like_reviews.include?(review)
+  end
+
+  # 映画のお気に入り機能
+  def bookmark(movie)
+    bookmark_movies << movie
+  end
+
+  def unbookmark(movie)
+    bookmark_movies.destroy(movie)
+  end
+
+  def bookmark?(movie)
+    bookmark_movies.include?(movie)
   end
 end

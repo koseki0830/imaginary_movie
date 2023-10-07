@@ -21,8 +21,17 @@
           <div class="flex items-center gap-2" >
             <div>
               <span class="block text-indigo-500"><%= @movie.user.name %></span>
-                <p class="text-sm">投稿日：<%= @movie.created_at.strftime("%Y/%m/%d") %></p>
+              <p class="text-sm">投稿日：<%= @movie.created_at.strftime("%Y/%m/%d") %></p>
             </div>
+        
+            <% if current_user %>
+              <% if current_user.own?(@movie) %>
+                <%= link_to '編集', edit_movie_path(@movie), class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
+                <%= link_to '削除', "#", class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
+              <% else %>
+                <%= render 'bookmark_button', movie: @movie %>
+              <% end %>
+            <% end %>
           </div>
         </div>
     </div>

@@ -3,6 +3,11 @@
   <div>
     <span class="block text-sm font-bold md:text-base"><%= link_to review.user.name, movie_review_path(@movie, review) %></span>
     <span class="block text-sm text-gray-500"><%= review.created_at %></span>
+    <div>
+      <span class="star-rating">
+      <span class="star-rating-front" style="width: <%= getPercent(review.rating) %>%;">★★★★★</span>
+      <span class="star-rating-back">★★★★★</span>
+    </div>
     <% if review.contains_spoiler? %>
       <p class="text-xl font-bold"><%= link_to '※このレビューはネタバレを含みます', movie_review_path(@movie, review) %></p>
     <% else %>

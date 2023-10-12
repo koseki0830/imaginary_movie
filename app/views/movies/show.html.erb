@@ -26,11 +26,18 @@
         
             <% if current_user %>
               <% if current_user.own?(@movie) %>
-                <%= link_to '編集', edit_movie_path(@movie), class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
-                <%= link_to '削除', "#", class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
+                <%= link_to edit_movie_path(@movie) do %>
+                  <i class="fa-solid fa-pen-to-square fa-lg"></i>
+                <% end %>
+                <%= link_to "#" do %>
+                 <i class="fa-solid fa-trash fa-lg"></i>
+                <% end %>
+                <%= @movie.bookmarks.count %>件のお気に入り
               <% else %>
                 <%= render 'bookmark_button', movie: @movie %>
               <% end %>
+            <% else %>
+              <%= @movie.bookmarks.count %>件のお気に入り
             <% end %>
           </div>
         </div>
@@ -38,7 +45,7 @@
 </div>
 </section>
 
-<%= link_to 'レビューを書く', new_movie_review_path(@movie), data: { turbo_frame: 'new_item' }, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
+<%= link_to 'レビューを投稿する', new_movie_review_path(@movie), data: { turbo_frame: 'new_item' }, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
 
 
 

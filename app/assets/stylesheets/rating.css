@@ -1,0 +1,52 @@
+.rating_form{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.rating_form input[type='radio']{
+  display: none;
+}
+.rating_form label{
+  position: relative;
+  padding: 10px 10px 0;
+  color: gray;
+  cursor: pointer;
+  font-size: 30px; /*星の大きさを変更*/
+}
+.rating_form label .text{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 9px; /*星の上の説明書きの大きさを変更*/
+  color: gray;
+}
+.rating_form label:hover,
+.rating_form label:hover ~ label,
+.rating_form input[type='radio']:checked ~ label{
+  color: #ffcc00;
+}
+
+/*　以下一覧ページの星用のCSS　*/
+
+.star-rating {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+.star-rating-front {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-back {
+  display: inline-block;
+  color: #ccc;
+
+}

@@ -29,7 +29,7 @@
                 <%= link_to edit_movie_path(@movie) do %>
                   <i class="fa-solid fa-pen-to-square fa-lg"></i>
                 <% end %>
-                <%= link_to "#" do %>
+                <%= link_to movie_path(@movie), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } do %>
                  <i class="fa-solid fa-trash fa-lg"></i>
                 <% end %>
                 <%= @movie.bookmarks.count %>件のお気に入り

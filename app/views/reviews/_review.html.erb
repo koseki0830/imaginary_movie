@@ -16,19 +16,11 @@
   </div>
     <% if current_user %>
       <% if current_user.own?(review) %>
-        <%= link_to '編集', edit_movie_review_path(review.movie, review), data: { turbo_frame: 'new_item' }, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
-        <%= link_to '削除', "#", class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
-        <div data-modal-target="modal"
-            data-controller="modal"
-            data-action="turbo:frame-load->modal#open turbo:submit-end->modal#close"
-            class="hidden fixed m-auto w-screen h-screen top-0 left-0 bg-gray-700/50 z-10">
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-max h-max bg-white p-10">
-            <%= turbo_frame_tag "new_item" %>
-          </div>
-        </div>
+        <p><%= review.likes.count %>いいね</p>
+        <p><%= review.comment_count %>件のコメント</p>
       <% else %>
         <%= render 'reviews/like_button', review: review %>
-        <%= review.comment_count %>件のコメント
+        <p><%= review.comment_count %>件のコメント</p>
       <% end %>
     <% end %>
 </div>

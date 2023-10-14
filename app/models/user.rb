@@ -48,6 +48,6 @@ class User < ApplicationRecord
 
   # ユーザーごとに関連する映画のブックマーク数合計を出す
   def total_bookmarks_count
-    movies.joins(:bookmarks).sum('bookmarks.id')
+    movies.joins(:bookmarks).count
   end
 end

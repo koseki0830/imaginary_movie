@@ -45,4 +45,9 @@ class User < ApplicationRecord
   def bookmark?(movie)
     bookmark_movies.include?(movie)
   end
+
+  # ユーザーごとに関連する映画のブックマーク数合計を出す
+  def total_bookmarks_count
+    movies.joins(:bookmarks).count
+  end
 end

@@ -14,4 +14,5 @@ class Movie < ApplicationRecord
   validates :synopsis, length: { maximum: 500 }
   validates :screening_time, presence: true
   validates :screening_time, length: { maximum: 1000 }
+
 end

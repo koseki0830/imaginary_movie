@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   root 'users#new'
   get 'mypage', to: 'users#show'
+  get 'rankings/sum', to: 'rankings#sum'
 
   resources :users, only: %i[new create update] do
       get :edit, on: :collection

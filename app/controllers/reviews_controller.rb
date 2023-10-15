@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  skip_before_action :require_login, only: %i[show]
+
   # レビューの新規投稿画面
   def new
     @movie = Movie.find(params[:movie_id])

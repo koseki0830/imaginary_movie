@@ -44,9 +44,9 @@
     </div>
 </div>
 </section>
-
-<%= link_to 'レビューを投稿する', new_movie_review_path(@movie), data: { turbo_frame: 'new_item' }, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
-
+<% if logged_in? %>
+  <%= link_to 'レビューを投稿する', new_movie_review_path(@movie), data: { turbo_frame: 'new_item' }, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
+<% end %>
 
 
 <div data-modal-target="modal"

@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.new(movie_params)
     if @movie.save
+      flash[:notice] = "映画を投稿しました！"
       redirect_to movies_path
     else
       render :new
@@ -27,6 +28,7 @@ class MoviesController < ApplicationController
 
   def update
     if @movie.update(movie_params)
+      flash[:notice] = "映画情報を編集しました！"
       redirect_to movies_path
     else
       render :edit

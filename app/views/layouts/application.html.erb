@@ -19,6 +19,7 @@
       <%= render 'shared/before_login_header' %>
     <% end %>
     <div class="flex-grow">
+      <%= render 'shared/flash_message' %>
       <%= yield %>
     </div>
     <div class="modal" tabindex="-1">

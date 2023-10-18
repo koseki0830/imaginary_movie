@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      movie: '映画'
+      review: 'レビュー'
+      comment: 'コメント'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        name: 'ユーザーネーム'
+      movie:
+        title: 'タイトル'
+        synopsis: 'あらすじ'
+        screening_time: '上映時間'
+        thumbnail: 'サムネイル'
+        category_ids: 'カテゴリー'
+      review:
+        content: 'レビュー内容' 
+        contains_spoiler: 'ネタバレを含みます'
+        rating: '評価'
+      comment:
+        content: 'コメント内容'

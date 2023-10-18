@@ -44,3 +44,6 @@
 
 .DS_Store
 /app/assets/images
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

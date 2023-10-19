@@ -1,0 +1,87 @@
+ja:
+  defaults:
+    title: '虚構映画'
+    login: 'ログインする'
+    logout: 'ログアウト'
+    to_movie_index: '映画一覧'
+    to_rankings: 'ユーザーランキング'
+    to_mypage: 'マイページ'
+    to_user_register: '会員登録'
+    to_login_page: 'ログイン'
+    inquiry: '問い合わせ'
+    terms_of_service: '利用規約'
+    privacy_policy: 'プライバシーポリシー'
+    bookmarks_movies: 'ブックマークした映画'
+    reviewed_movies: 'レビューした映画'
+    profile_edit: 'ユーザープロフィール編集'
+    message:
+      require_login: 'ログインしてください'
+      delete_confirm: '本当に削除しますか?'
+
+  users:
+    new:
+      title: 'ユーザー登録'
+    create:
+      success: 'ユーザー登録が完了しました!'
+    edit:
+      title: 'プロフィール編集'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      password_forget: 'パスワードを忘れた方はこちら'
+    create:
+      success: 'ログインしました!'
+  movies:
+    _movie:
+      screening_time: '上映時間：'
+      category: 'カテゴリー：'
+      synopsis: 'あらすじ'
+      created_at: '投稿日：'
+    new:
+      title: '映画登録'
+      subtitle: '映画を登録しましょう'
+    create:
+      success: '映画を投稿しました!'
+    index:
+      title: '映画一覧'
+      no_result: '映画が登録されていません'
+      new_movie_create: '映画を投稿する'
+    show: 
+      screening_time: '上映時間：'
+      category: 'カテゴリー：'
+      synopsis: 'あらすじ'
+      created_at: '投稿日：'
+      create_review: 'レビューを投稿する'
+      no_result: 'レビューは投稿されていません'
+    edit:
+      title: '映画編集'
+      subtitle: '映画情報を編集しましょう'
+    update:
+      success: '映画情報を編集しました!'
+    bookmarks:
+      title: 'ブックマークした映画'
+      no_result: 'ブックマークした映画はありません'
+    my_reviews_movies:
+      title: 'レビューした映画'
+      no_result: 'レビュー済みの映画はありません'
+  reviews:
+    show:
+      comment: 'コメント'
+  comments:
+    create: 
+      success: 'コメントを投稿しました'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '送信'
+    create:
+      success: 'パスワードの再設定についてのメールを送信しました。'
+    edit:
+      title: 'パスワード再登録'
+      subtitle: 'パスワードを再設定します。新しいパスワードを入力してください。'
+      submit: 'パスワードリセット'
+    update: 
+      success: 'パスワードを再設定しました'
+  rankings:
+    sum:
+      bookmarks_sum: 'ブックマーク数合計：'

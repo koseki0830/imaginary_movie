@@ -81,3 +81,4 @@ gem "pry-rails"
 gem "carrierwave", "~> 3.0"
 gem "mini_magick"
 gem "config"
+gem 'rails-i18n'

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "ユーザー登録が完了しました!"
+      flash[:notice] = t('.success')
       redirect_to login_path 
     else
       render :new

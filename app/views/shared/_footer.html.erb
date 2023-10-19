@@ -3,25 +3,25 @@
     <div class="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
       <div class="col-span-full lg:col-span-2">
         <!-- logo - start -->
-          <%= link_to '虚構映画', movies_path, class: "inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl" %>
+          <%= link_to t('defaults.title'), movies_path, class: "inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl" %>
         <!-- logo - end -->
       </div>
 
       <!-- nav - start -->
       <div>
-        <div class="mb-4 font-bold uppercase tracking-widest text-gray-100"><%= link_to 'お問い合わせ', '#' %></div>
+        <div class="mb-4 font-bold uppercase tracking-widest text-gray-100"><%= link_to t('defaults.inquiry'), '#' %></div>
       </div>
       <!-- nav - end -->
 
       <!-- nav - start -->
       <div>
-        <div class="mb-4 font-bold uppercase tracking-widest text-gray-100"><%= link_to '利用規約', '#' %></div>
+        <div class="mb-4 font-bold uppercase tracking-widest text-gray-100"><%= link_to t('defaults.terms_of_service'), '#' %></div>
       </div>
       <!-- nav - end -->
 
       <!-- nav - start -->
       <div>
-        <div class="mb-4 font-bold uppercase tracking-widest text-gray-100"><%= link_to 'プライバシーポリシー', '#' %></div>
+        <div class="mb-4 font-bold uppercase tracking-widest text-gray-100"><%= link_to t('defaults.privacy_policy'), '#' %></div>
       </div>
       <!-- nav - end -->
     </div>

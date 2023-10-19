@@ -2,7 +2,6 @@
 <%= form_with(model: [review, comment], url: movie_review_comments_path(movie, review), local: true, html: { class: "mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2" }) do |f| %>
 
   <div class="sm:col-span-2">
-    <%= f.label :content, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
     <%= f.text_area :content, class: "h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
   </div>
 

@@ -45,6 +45,7 @@ ja:
     index:
       title: '映画一覧'
       no_result: '映画が登録されていません'
+      new_movie_create: '映画を投稿する'
     show: 
       screening_time: '上映時間：'
       category: 'カテゴリー：'

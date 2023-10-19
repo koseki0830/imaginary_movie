@@ -19,7 +19,7 @@
                     <%= link_to edit_movie_review_path(@review.movie, @review), data: { turbo_frame: 'new_item' } do %>
                       <i class="fa-solid fa-pen-to-square"></i>
                     <% end %>
-                    <%= link_to movie_review_path(@review), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } do %>
+                    <%= link_to movie_review_path(@review), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm') } do %>
                       <i class="fa-solid fa-trash"></i>
                      <% end %>
                     <p><%= @review.likes.count %>いいね</p>
@@ -54,7 +54,7 @@
   </div>
 </div>
 
-<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">コメント</h2>
+<h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12"><%= t('.comment') %></h2>
 <!-- コメントフォーム -->
 <%= render 'comments/form', { movie: @movie, review: @review, comment: @comment } %>
 

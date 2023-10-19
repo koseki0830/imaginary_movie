@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      flash[:notice] = "ログインしました!"
+      flash[:notice] = t('.success')
       redirect_to movies_path
     else
       render :new

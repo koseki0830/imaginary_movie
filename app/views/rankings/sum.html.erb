@@ -2,7 +2,7 @@
     <% @top_users.each_with_index do |user, index| %>
         <div class="bg-white p-4 rounded shadow">
             <h2 class="text-lg font-semibold mb-2"><%= "#{index + 1}位 #{user.name} さん" %></h2>
-            <p>ブックマーク数合計: <%= user.total_bookmarks_count %></p>
+            <p><%= t('.bookmarks_sum') %><%= user.total_bookmarks_count %></p>
             
             <!-- 最新3作品の表示 -->
             <div class="flex space-x-20 mt-4">

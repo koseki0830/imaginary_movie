@@ -6,7 +6,7 @@ class PasswordResetsController < ApplicationController
   def create
     @user = User.find_by(email: params[:email])
     @user&.deliver_reset_password_instructions!
-    flash[:notice] = "パスワードの再設定についてのメールを送信しました。"
+    flash[:notice] = t('.success')
     redirect_to login_path
   end
 
@@ -25,7 +25,7 @@ class PasswordResetsController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
     # 一時トークンをクリアし、パスワードを更新する
     if @user.change_password(params[:user][:password])
-      flash[:notice] = "パスワードを再設定しました"
+      flash[:notice] = t('.success')
       redirect_to login_path
     else
       render :edit

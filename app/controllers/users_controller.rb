@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       flash[:notice] = t('.success')
       redirect_to login_path 
     else
+      flash.now[:alert] = t('.fail')
       render :new, status: :unprocessable_entity
     end
   end

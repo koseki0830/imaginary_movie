@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
       flash[:notice] = t('.success')
       redirect_to movies_path
     else
+      flash.now[:alert] = t('.fail')
       render :new, status: :unprocessable_entity
     end
   end
@@ -32,6 +33,7 @@ class MoviesController < ApplicationController
       flash[:notice] = t('.success')
       redirect_to movies_path
     else
+      flash.now[:alert] = t('.fail')
       render :edit, status: :unprocessable_entity
     end
   end

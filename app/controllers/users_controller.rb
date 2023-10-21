@@ -11,7 +11,8 @@ class UsersController < ApplicationController
       flash[:notice] = t('.success')
       redirect_to login_path 
     else
-      render :new
+      flash.now[:alert] = t('.fail')
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to mypage_path
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

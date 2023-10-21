@@ -23,6 +23,7 @@ ja:
       title: 'ユーザー登録'
     create:
       success: 'ユーザー登録が完了しました!'
+      fail: 'ユーザー登録ができませんでした'
     edit:
       title: 'プロフィール編集'
   user_sessions:
@@ -31,6 +32,7 @@ ja:
       password_forget: 'パスワードを忘れた方はこちら'
     create:
       success: 'ログインしました!'
+      fail: 'ログインできませんでした'
   movies:
     _movie:
       screening_time: '上映時間：'
@@ -42,6 +44,7 @@ ja:
       subtitle: '映画を登録しましょう'
     create:
       success: '映画を投稿しました!'
+      fail: '映画を投稿できませんでした'
     index:
       title: '映画一覧'
       no_result: '映画が登録されていません'
@@ -57,7 +60,8 @@ ja:
       title: '映画編集'
       subtitle: '映画情報を編集しましょう'
     update:
-      success: '映画情報を編集しました!'
+      success: '映画情報を更新しました!'
+      fail: '映画情報を更新できませんでした'
     bookmarks:
       title: 'ブックマークした映画'
       no_result: 'ブックマークした映画はありません'

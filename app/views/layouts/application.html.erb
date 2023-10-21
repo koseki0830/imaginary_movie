@@ -19,7 +19,9 @@
       <%= render 'shared/before_login_header' %>
     <% end %>
     <div class="flex-grow">
-      <%= render 'shared/flash_message' %>
+      <% unless flash[:skip_flash_message] %>
+        <%= render 'shared/flash_message' %>
+      <% end %>
       <%= yield %>
     </div>
     <div class="modal" tabindex="-1">

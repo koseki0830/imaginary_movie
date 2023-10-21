@@ -1,6 +1,15 @@
 <!-- form - start -->
 <%= form_with(model: [review, comment], url: movie_review_comments_path(movie, review), local: true, html: { class: "mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2" }) do |f| %>
-
+  <% if flash[:alert].present? %>
+    <div class="bg-red-100 border border-red-500 text-red-700 px-4 py-3 rounded">
+      <ul>
+        <% flash[:alert].each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+      
   <div class="sm:col-span-2">
     <%= f.text_area :content, class: "h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
   </div>

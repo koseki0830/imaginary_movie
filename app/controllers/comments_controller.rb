@@ -5,7 +5,10 @@ class CommentsController < ApplicationController
       flash[:notice] = t('.success')
       redirect_to movie_reviews_path(comment.review)
     else
-      redirect_to movie_reviews_path(comment.review)
+      # 画面上部のフラッシュメッセージをスキップしてバリデーションのみ表示する設定
+      flash[:skip_flash_message] = true
+      # flash[:alert]にエラーメッセージを格納してビューで表示している
+      redirect_to movie_reviews_path(comment.review), flash: { alert: comment.errors.full_messages }
     end
   end
 

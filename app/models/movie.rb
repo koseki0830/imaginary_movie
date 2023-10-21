@@ -10,9 +10,10 @@ class Movie < ApplicationRecord
 
   validates :title, presence: true
   validates :title, length: { maximum: 100 }
+  validates :screening_time, presence: true
+  validates :screening_time, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 1000  }
+  validates :category_ids, presence: true
   validates :synopsis, presence: true
   validates :synopsis, length: { maximum: 500 }
-  validates :screening_time, presence: true
-  validates :screening_time, length: { maximum: 1000 }
 
 end

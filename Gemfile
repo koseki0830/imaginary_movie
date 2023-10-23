@@ -82,3 +82,7 @@ gem "carrierwave", "~> 3.0"
 gem "mini_magick"
 gem "config"
 gem 'rails-i18n'
+
+# API関連
+gem 'httparty'
+gem 'dotenv-rails', groups: [:development, :test]

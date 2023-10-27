@@ -1,0 +1,12 @@
+<%= turbo_frame_tag 'image_generation' do %>
+  <%= form_with url: thumbnails_path, method: :post, id: "imageGenerationForm", data: { turbo_frame: "image_generation" } do |f| %>
+    <div>
+    <%= f.text_field :prompt, id: "promptInput", placeholder: "画像のプロンプトを入力", class: "h-12 w-3/4 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
+    </div>
+
+    <div>
+      <%= f.submit "画像を生成", id: "generateImageButton", class: "inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base" %>
+    </div>
+  <% end %>
+    <%= image_tag @image_data, id: "generatedImage", alt: "生成された画像", style: "display: none;" if @image_data.present? %>
+<% end %>

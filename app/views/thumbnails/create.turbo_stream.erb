@@ -1,0 +1,11 @@
+<turbo-stream action="replace" target="image_generation">
+  <template>
+    <%= turbo_frame_tag 'image_generation' do %>
+      <% if @image_data.present? %>
+        <%= image_tag @image_data, id: "generatedImage", alt: "生成された画像" %>
+      <% else %>
+        <p>画像の生成に失敗しました</p>
+      <% end %>
+    <% end %>
+  </template>
+</turbo-stream>

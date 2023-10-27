@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   resources :bookmarks, only: %i[create destroy]
   resources :password_resets, only: %i[new create edit update]
   resources :thumbnails, only: %i[create new]
+  resources :photos, only: %i[index]
 
 end

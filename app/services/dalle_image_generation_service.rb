@@ -17,10 +17,12 @@ class DalleImageGenerationService
     }.to_json
     
     begin
-      response = HTTParty.post(BASE_URL, headers: headers, body: body, timeout: 10) # 10秒タイムアウト
+      response = HTTParty.post(BASE_URL, headers: headers, body: body, timeout: 10)
+
+      Rails.logger.info("API Full Response: #{response.body}")
       
       if response.success?
-        return response["data"][0]["image_url"] # 仮のレスポンス構造（実際のAPIのレスポンス構造に合わせて変更する必要があります）
+        return response["data"][0]["url"]
       else
         Rails.logger.error("Error generating image: #{response.body}")
         return nil

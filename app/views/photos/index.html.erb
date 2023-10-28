@@ -7,8 +7,8 @@
   <% if @photos.present? %>
     <div class="flex flex-wrap -m-2">
       <% @photos.each do |photo| %>
-        <div class="w-1/3 p-2" data-image-id="<%= photo["id"] %>">
-          <%= image_tag photo["src"]["medium"], alt: photo["alt"], class: "some-class-if-needed selectable-image" %>
+        <div class="w-1/3 p-2">
+          <%= image_tag photo["src"]["medium"], alt: photo["alt"], class: "some-class-if-needed" %>
         </div>
       <% end %>
     </div>

@@ -16,4 +16,9 @@ class Movie < ApplicationRecord
   validates :synopsis, presence: true
   validates :synopsis, length: { maximum: 500 }
 
+  # サムネイルのテキストについてのバリデーション
+  validates :text_position, inclusion: { in: %w[上部 中央 下部] }
+  validates :text_color, presence: true
+  validates :text_size, numericality: { only_integer: true, greater_than: 10, less_than: 200 }
+  validates :font_type, presence: true
 end

@@ -1,5 +1,12 @@
 <div class="flex flex-col overflow-hidden rounded-lg border bg-white">
-  <%= image_tag movie.thumbnail_url, class: "group relative block h-48 overflow-hidden bg-gray-100 md:h-64" %>
+  <div class="relative group block h-48 overflow-hidden bg-gray-100 md:h-64">
+    <%= image_tag movie.thumbnail_url, class: "group relative block h-48 overflow-hidden bg-gray-100 md:h-64" %>
+      <div class="absolute top-0 left-0 w-full h-full flex <%= text_position_class(movie.text_position) %>"> <!-- テキストの位置を指定 -->
+        <div class="title-container">
+          <span class="title <%= text_color_class(movie.text_color) %> <%= text_size_class(movie.text_size) %>"><%= movie.title %></span> <!-- テキストの色、サイズを指定 -->
+        </div>
+      </div>
+  </div>
   <div class="flex flex-1 flex-col p-4 sm:p-6">
     <h2 class="mb-2 text-lg font-semibold text-gray-800">
       <%= link_to movie.title, movie_path(movie), class: "transition duration-100 hover:text-indigo-500 active:text-indigo-600" %>

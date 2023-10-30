@@ -22,22 +22,17 @@
 
   <div>
     <%= f.label :text_color, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
-    <%= f.select :text_color, [['白', 'white'], ['黒', 'black'], ['赤', 'red']], {}, class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
+    <%= f.select :text_color, ['黒', '白', '赤', '青'], {}, class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
   </div>
 
   <div>
     <%= f.label :text_size, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
-    <%= f.select :text_size, [['小', 10], ['中', 20], ['大', 30]], {}, class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
+    <%= f.select :text_size, ['小', '中', '大'], {}, class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
   </div>
-
-  <div>
-    <%= f.label :font_type, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
-    <%= f.select :font_type, [['フォントA', 'font_a'], ['フォントB', 'font_b'], ['フォントC', 'font_c']], {}, class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
-  </div> 
   
   <div>
     <%= f.label :text_position, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
-    <%= f.select :text_position, [['上部', 'top'], ['中部', 'middle'], ['下部', 'bottom']], {}, class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
+    <%= f.select :text_position, ['上部', '中部', '下部'], {}, class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
   </div>
 
   <div class="mb-4">

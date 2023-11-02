@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_28_111715) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_30_154143) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,7 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_111715) do
     t.datetime "updated_at", null: false
     t.string "text_position"
     t.string "text_color"
-    t.integer "text_size"
+    t.string "text_size"
     t.string "font_type"
     t.index ["user_id"], name: "index_movies_on_user_id"
   end

@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.new(movie_params)
     if @movie.save
       flash[:notice] = t('.success')
-      redirect_to movies_path
+      redirect_to movie_path(@movie)
     else
       flash.now[:alert] = t('.fail')
       render :new, status: :unprocessable_entity
@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
   def update
     if @movie.update(movie_params)
       flash[:notice] = t('.success')
-      redirect_to movies_path
+      redirect_to movie_path(@movie)
     else
       flash.now[:alert] = t('.fail')
       render :edit, status: :unprocessable_entity

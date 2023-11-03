@@ -1,0 +1,16 @@
+.title-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.title {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 90%;
+  text-align: center;
+}

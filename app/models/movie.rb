@@ -15,5 +15,10 @@ class Movie < ApplicationRecord
   validates :category_ids, presence: true
   validates :synopsis, presence: true
   validates :synopsis, length: { maximum: 500 }
+  validates :thumbnail, presence: true
 
+  # サムネイルのテキストについてのバリデーション
+  validates :text_color, presence: true
+  validates :text_size, presence: true
+  validates :text_position, presence: true
 end

@@ -39,6 +39,8 @@ ja:
       category: 'カテゴリー：'
       synopsis: 'あらすじ'
       created_at: '投稿日：'
+    _form:
+      to_thumbnail_create: 'ポスター画像生成画面へ'
     new:
       title: '映画登録'
       subtitle: '映画を登録しましょう'

@@ -3,7 +3,14 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Left Column: Movie Poster -->
         <div class="md:col-span-1">
-          <%= image_tag @movie.thumbnail.url, class: "w-full rounded-lg shadow-lg" %>
+          <div class="relative w-full rounded-lg shadow-lg overflow-hidden bg-gray-100 md:h-64 bg-white flex <%= text_position_class(@movie.text_position) %>">
+            <%= image_tag @movie.thumbnail.url, class: "w-full h-full object-fit" %>
+              <div class="title-container flex justify-center <%= text_position_class(@movie.text_position) %>">
+                <span class="title <%= text_size_class(@movie) %> <%= text_color_class(@movie) %> font-bold absolute">
+                  <%= @movie.title %>
+                </span>
+              </div>
+          </div>
         </div>
 
         <!-- Middle Column: Movie Details -->

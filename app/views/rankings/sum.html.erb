@@ -1,6 +1,6 @@
-<div class="space-y-4">
+<div class="space-y-4 bg-amber-100">
     <% @top_users.each_with_index do |user, index| %>
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-amber-100 p-4 rounded shadow">
             <h2 class="text-lg font-semibold mb-2"><%= "#{index + 1}位 #{user.name} さん" %></h2>
             <p><%= t('.bookmarks_sum') %><%= user.total_bookmarks_count %></p>
             

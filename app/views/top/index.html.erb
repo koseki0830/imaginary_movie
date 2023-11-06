@@ -1,0 +1,58 @@
+<div class="bg-amber-100">
+  <div class="min-h-screen pt-4 w-screen flex justify-center items-center">
+    <div class="max-w-md pb-24 mx-auto">
+      <div class="text-center border-dotted border-t-2 border-fitting-pink py-20">
+        <div class="text-base leading-relaxed mx-auto text-gray-500">
+          <h1 class="text-2xl title-font text-gray-900 mb-4">虚構映画　とは</h1>
+          <p>虚構映画は、架空の映画についてのレビューを投稿するアプリです。 架空の映画のあらすじを自由に投稿・その架空の映画に対するレビューを投稿することができます。</p>
+          <p class=" text-red-500 font-bold">※当アプリで出てくる物語はフィクションであり、実在の人物・団体とは一切関係ありません</p>
+        </div>
+        <div class="flex mt-6 justify-center">
+          <div class="w-16 h-1 rounded-full bg-fitting-pink inline-flex"></div>
+        </div>
+      </div>
+
+      <h1 class="text-2xl title-font text-gray-900 mb-4 text-center">使い方</h1>
+      <div class="flex flex-wrap">
+        <!-- 各ステップのコンテナー -->
+        <div class="mb-6 p-4 flex flex-col text-center items-center">
+          <!-- ステップの説明 -->
+          <div class="flex-grow">
+            <h2 class="font-kaisei text-gray-900 text-lg title-font font-bold mb-3">その1. 架空の映画を見てみよう</h2>
+            <p class="leading-relaxed text-base text-gray-500 mb-8">まずは下記の「映画一覧へ」ボタンから、架空の映画の情報を見てみましょう。</p>
+            <%= link_to t('defaults.to_movie_index'), movies_path, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24 mt-4" %>
+          </div>
+        </div>
+        <div class="mb-6 p-4 flex flex-col text-center items-center">
+          <!-- ステップの説明 -->
+          <div class="flex-grow">
+            <h2 class="font-kaisei text-gray-900 text-lg title-font font-bold mb-3">その2. ユーザー登録をしてみよう</h2>
+            <p class="leading-relaxed text-base text-gray-500 mb-8">ユーザー登録をすると、架空の映画の登録、レビューの登録をすることができます。</p>
+            <%= link_to t('defaults.to_user_register'), new_user_path, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24 mt-4" %>
+          </div>
+        </div>
+        <div class="mb-6 p-4 flex flex-col text-center items-center">
+          <!-- ステップの説明 -->
+          <div class="flex-grow space-y-4">
+            <h2 class="font-kaisei text-gray-900 text-lg title-font font-bold mb-3">その3. 架空の映画を投稿してみよう！</h2>
+            <p class="leading-relaxed text-base text-gray-500">ユーザー登録を済ませたら、映画を投稿することができます。タイトル・あらすじ等を自由に入力しましょう。</p>
+            <p class="leading-relaxed text-base text-gray-500">ポスター画像については下記の2つのいずれかの方法で設定できます。</p>
+            <ol class="list-decimal">
+              <li class="text-sm text-gray-500">投稿フォームの「ポスター画像生成画面へ」をクリックの上、検索欄にて好きなワードで検索して保存。</li>
+              <li class="text-sm text-gray-500">ご自身で好きな画像をご用意いただき、フォームにアップ。</li>
+            </ol>
+
+            <p class="leading-relaxed text-base text-gray-500">※どちらの方法でも、アップいただいた画像にタイトルテキストが自動で入るようになっています。</p>
+          </div>
+        </div>
+        <div class="mb-6 p-4 flex flex-col text-center items-center">
+          <!-- ステップの説明 -->
+          <div class="flex-grow">
+            <h2 class="font-kaisei text-gray-900 text-lg title-font font-bold mb-3">その4. 映画のレビューを投稿しよう</h2>
+            <p class="leading-relaxed text-base text-gray-500">映画一覧から、映画のタイトルをクリックすると、レビュー投稿へのリンクがあります。5段階評価とその映画に対するレビューを投稿することができます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

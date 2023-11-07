@@ -17,7 +17,9 @@ ja:
     message:
       require_login: 'ログインしてください'
       delete_confirm: '本当に削除しますか?'
-
+  top:
+    index:
+      subtitle: '~架空のストーリーを展開しよう~'
   users:
     new:
       title: 'ユーザー登録'

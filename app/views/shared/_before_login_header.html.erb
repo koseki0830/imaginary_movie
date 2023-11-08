@@ -1,10 +1,11 @@
 <div class="bg-yellow-300 lg:pb-12">
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <header class="flex items-center justify-between py-4 md:py-8">
+    <header class="flex items-center justify-between py-1 md:py-1">
       <!-- logo - start -->
-        <%= link_to t('defaults.title'), root_path, class: "inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl" %>
+      <%= link_to root_path do %>
+        <%= image_tag 'title_logo10.png', size: "155x20" %>
+      <% end %>
       <!-- logo - end -->
-
       <!-- nav - start -->
       <nav class="hidden gap-12 lg:flex">
         <%= link_to t('defaults.to_movie_index'), movies_path, class: "text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>

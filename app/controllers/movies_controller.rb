@@ -44,7 +44,11 @@ class MoviesController < ApplicationController
   end
 
   def my_reviews_movies
-    @reviews_movies = current_user.reviews.includes(:movie).order(created_at: :desc).page(params[:page])
+    @reviews_movies = current_user.reviews
+                                  .joins(:movie)
+                                  .select('distinct on (movies.id) movies.*, reviews.id as review_id, reviews.movie_id')
+                                  .order('movies.id, reviews.created_at desc')
+                                  .page(params[:page])
   end
 
   def bookmarks

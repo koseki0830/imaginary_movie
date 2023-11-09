@@ -86,3 +86,5 @@ gem 'rails-i18n'
 # API関連
 gem 'httparty'
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'kaminari'

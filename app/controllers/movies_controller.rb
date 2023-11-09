@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   
   def index
-    @movies = Movie.all
+    @movies = Movie.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new

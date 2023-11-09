@@ -93,3 +93,9 @@ ja:
   rankings:
     sum:
       bookmarks_sum: 'ブックマーク数合計：'
+  views:
+    pagination:
+      first: '最初'
+      previous: '前へ'
+      next: '次へ'
+      last: '最後'

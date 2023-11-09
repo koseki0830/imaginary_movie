@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   
   def index
-    @movies = Movie.all
+    @movies = Movie.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -43,15 +43,16 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
-  # それぞれのサイドバーに、ブックマークした映画とレビューした映画数を表示するため変数を定義
   def my_reviews_movies
-    @bookmarks_movies = current_user.bookmark_movies.includes(:user).order(created_at: :desc)
-    @movies = current_user.reviews.includes(:movie).map(&:movie)
+    @reviews_movies = current_user.reviews
+                                  .joins(:movie)
+                                  .select('distinct on (movies.id) movies.*, reviews.id as review_id, reviews.movie_id')
+                                  .order('movies.id, reviews.created_at desc')
+                                  .page(params[:page])
   end
 
   def bookmarks
-    @bookmarks_movies = current_user.bookmark_movies.includes(:user).order(created_at: :desc)
-    @movies = current_user.reviews.includes(:movie)
+    @bookmarks_movies = current_user.bookmark_movies.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   private

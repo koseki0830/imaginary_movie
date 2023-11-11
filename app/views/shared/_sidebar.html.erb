@@ -1,17 +1,17 @@
-<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-   <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+<aside id="default-sidebar" class="z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+   <div class="h-full flex flex-col justify-start px-3 py-4 overflow-y-auto">
       <ul class="space-y-2 font-medium">
          <li>
             <span class="ml-3 font-bold"><%= current_user.name %>さんのマイページ</span>
          </li>
-         <li>
-            <span class="flex-1 ml-3 whitespace-nowrap"><%= link_to t('defaults.bookmarks_movies'), bookmarks_movies_path %></span>
+         <li class="mb-2 flex-1 ml-3 bg-yellow-300 hover:bg-gray-400 text-black rounded px-4 py-2 font-bold">
+            <%= link_to t('defaults.bookmarks_movies'), bookmarks_movies_path %>
          </li>
-         <li>
-            <span class="flex-1 ml-3 whitespace-nowrap"><%= link_to t('defaults.reviewed_movies'), my_reviews_movies_movies_path %></span>
+         <li class="mb-2 flex-1 ml-3 bg-yellow-300 hover:bg-gray-400 text-balck rounded px-4 py-2 font-bold">
+            <%= link_to t('defaults.reviewed_movies'), my_reviews_movies_movies_path %>
          </li>
-         <li>
-            <span class="flex-1 ml-3 whitespace-nowrap"><%= link_to t('defaults.profile_edit'), edit_users_path %></span>
+         <li class="mb-2 flex-1 ml-2 bg-yellow-300 hover:bg-gray-400 text-black rounded px-4 py-2 font-bold">
+            <%= link_to t('defaults.profile_edit'), edit_users_path %>
          </li>
       </ul>
    </div>

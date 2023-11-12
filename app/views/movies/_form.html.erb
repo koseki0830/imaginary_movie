@@ -7,11 +7,11 @@
   </div>
 
   <div>
-    <%= f.label :screening_time, class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
-    <%= f.text_field :screening_time, class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
+    <%= f.label :screening_time, t('movies._form.screening_time'), class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
+    <%= f.text_field :screening_time, placeholder: "例: 120", class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
   </div>
   <div>
-    <%= f.label :category_ids,'カテゴリー(複数選択可)', class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
+    <%= f.label :category_ids, t('movies._form.category'), class: "mb-2 inline-block text-sm text-gray-800 sm:text-base" %>
     <%= f.collection_select(:category_ids, Category.all, :id, :name, {}, { multiple: true,  class: "w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" }) %>
   </div>
 

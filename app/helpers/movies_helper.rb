@@ -7,7 +7,7 @@ module MoviesHelper
     when '白'
       'text-white'
     when '赤'
-      'text-rose-500'
+      'text-rose-600'
     when '青'
       'text-blue-600'
     else
@@ -19,13 +19,13 @@ module MoviesHelper
     size = movie.text_size.presence || '中'
     case size
     when '小'
-      'text-sm'
-    when '中'
       'text-base'
+    when '中'
+      'text-lg'
     when '大'
-      'text-xl'
+      'text-2xl'
     else
-      'text-base' # デフォルト
+      'text-lg' # デフォルト
     end
   end
 

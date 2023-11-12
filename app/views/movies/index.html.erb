@@ -5,7 +5,7 @@
       <%= link_to t('.new_movie_create'), new_movie_path, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
     </div>
     
-    <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8" >
+    <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-8" >
       <% if @movies.present? %>
         <% @movies.each do |movie| %>
           <%= render 'movie', movie: movie %>

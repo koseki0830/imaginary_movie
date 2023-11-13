@@ -13,7 +13,7 @@
     <%= favicon_link_tag 'favicon.ico', class: "h-32 w-32" %>
   </head>
 
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen bg-amber-100">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>

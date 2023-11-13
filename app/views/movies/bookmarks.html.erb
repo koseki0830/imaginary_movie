@@ -1,25 +1,27 @@
-<%= render 'shared/sidebar' %>
-<div class="bg-amber-100 py-9 sm:py-6 lg:py-12">
-  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <div class="mb-10 md:mb-16">
-      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl"><%= t('.title') %></h2>
-    </div>
+<div class="flex">
+  <%= render 'shared/sidebar' %>
+  <div class="flex-grow py-9 sm:py-6 lg:py-12">
+    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <div class="mb-10 md:mb-16">
+        <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl"><%= t('.title') %></h2>
+      </div>
 
-    <div class="p-4 sm:ml-64">
-      <div class="p-4 border-dashed rounded-lg dark:border-gray-700">
-      
-        <div class="grid grid-cols-3 gap-4 mb-4">
-          <% if @bookmarks_movies.present? %>
-            <% @bookmarks_movies.each do |movie| %>
-              <%= render 'movie', movie: movie %>
+      <div class="p-4 sm:ml-64">
+        <div class="p-4 border-dashed rounded-lg dark:border-gray-700">
+        
+          <div class="grid grid-cols-3 gap-4 mb-4">
+            <% if @bookmarks_movies.present? %>
+              <% @bookmarks_movies.each do |movie| %>
+                <%= render 'movie', movie: movie %>
+              <% end %>
+            <% else %>
+              <h1 class="text-2xl">
+                <%= t('.no_result') %>
+              </h1>
             <% end %>
-          <% else %>
-            <h1 class="text-2xl">
-              <%= t('.no_result') %>
-            </h1>
-          <% end %>
+          </div>
+          <%= paginate @bookmarks_movies %>
         </div>
-        <%= paginate @bookmarks_movies %>
       </div>
     </div>
   </div>

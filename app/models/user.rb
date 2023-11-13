@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :bookmark_movies, through: :bookmarks, source: :movie
 
   validates :name, presence: true
+  validates :name, uniqueness: true
   validates :email, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }

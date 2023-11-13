@@ -10,7 +10,7 @@ FactoryBot.define do
     text_position { "上部" }
 
     after(:build) do |movie|
-      movie.categories << FactoryBot.create(:category) if movie.categories.empty?
+      movie.categories << FactoryBot.create(:category)
     end
   end
 end

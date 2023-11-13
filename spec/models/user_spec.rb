@@ -13,8 +13,8 @@ RSpec.describe User, type: :model do
     end
 
     it '名前が100文字を超える場合は無効' do
-      user_more_than_name = FactoryBot.build(:user, name: 'a' * 101)
-      expect(user_more_than_name).to be_invalid
+      long_name_user = FactoryBot.build(:user, name: 'a' * 101)
+      expect(long_name_user).to be_invalid
     end
 
     it '重複した名前の場合は無効' do

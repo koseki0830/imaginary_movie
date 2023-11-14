@@ -63,4 +63,44 @@ RSpec.describe User, type: :model do
       expect(user.own?(other_movie)).to be false
     end
   end
+
+  describe 'アソシエーションに関するテスト' do
+    before do
+      @user = FactoryBot.create(:user)
+    end
+
+    it 'moviesとの関係性' do
+      movie1 = FactoryBot.create(:movie, user: @user)
+      movie2 = FactoryBot.create(:movie, user: @user)
+      expect(@user.movies).to include(movie1, movie2)
+    end
+
+    it 'reviewsとの関係性' do
+      review1 = FactoryBot.create(:review, user: @user)
+      review2 = FactoryBot.create(:review, user: @user)
+      expect(@user.reviews).to include(review1, review2)
+    end
+
+    it 'likesとの関係性' do
+      review1 = FactoryBot.create(:review)
+      review2 = FactoryBot.create(:review)
+      like1 = Like.create(review: review1, user: @user)
+      like2 = Like.create(review: review2, user: @user)
+      expect(@user.likes).to include(like1, like2)
+    end
+
+    it 'commentsとの関係性' do
+      comment1 = FactoryBot.create(:comment, user: @user)
+      comment2 = FactoryBot.create(:comment, user: @user)
+      expect(@user.comments).to include(comment1, comment2)
+    end
+
+    it 'bookmarksとの関係性' do
+      movie1 = FactoryBot.create(:movie)
+      movie2 = FactoryBot.create(:movie)
+      bookmark1 = Bookmark.create(movie: movie1, user: @user)
+      bookmark2 = Bookmark.create(movie: movie2, user: @user)
+      expect(@user.bookmarks).to include(bookmark1, bookmark2)
+    end
+  end
 end

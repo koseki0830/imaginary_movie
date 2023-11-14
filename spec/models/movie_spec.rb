@@ -68,4 +68,36 @@ RSpec.describe Movie, type: :model do
       expect(movie_without_text_position).to be_invalid
     end
   end
+
+  describe 'アソシエーションに関するテスト' do
+   before do
+    @movie = FactoryBot.create(:movie)
+   end
+
+   it 'userとの関係性' do
+    expect(@movie.user).to be_present
+   end
+
+   it 'categoriesとの関係性' do
+    category = FactoryBot.create(:category)
+    @movie.categories << category
+    expect(@movie.categories).to include(category)
+   end
+
+   it 'reviewsとの関係性' do
+    review1 = FactoryBot.create(:review, movie: @movie)
+    review2 = FactoryBot.create(:review, movie: @movie)
+    expect(@movie.reviews).to include(review1, review2)
+   end
+
+   it 'bookmarksとの関係性' do
+    user1 = FactoryBot.create(:user)
+    user2 = FactoryBot.create(:user)
+    bookmark1 = Bookmark.create(user: user1, movie: @movie)
+    bookmark2 = Bookmark.create(user: user2, movie: @movie)
+
+    expect(@movie.bookmarks).to include(bookmark1, bookmark2)
+    expect(@movie.bookmark_users).to include(user1, user2)
+   end
+  end
 end

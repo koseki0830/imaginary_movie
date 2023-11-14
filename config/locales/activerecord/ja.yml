@@ -16,7 +16,7 @@ ja:
         synopsis: 'あらすじ'
         screening_time: '上映時間'
         thumbnail: 'ポスター画像'
-        category_ids: 'カテゴリー'
+        categories: 'カテゴリー'
         text_color: 'ポスター画像のテキストの色'
         text_size: 'ポスター画像のテキストのサイズ'
         font_type: 'ポスター画像のテキストのフォント'

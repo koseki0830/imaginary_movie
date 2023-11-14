@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :bookmark_movies, through: :bookmarks, source: :movie
 
   validates :name, presence: true
+  validates :name, length: { maximum: 100 }
   validates :name, uniqueness: true
   validates :email, presence: true
   validates :email, uniqueness: true

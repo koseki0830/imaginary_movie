@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  let(:user) { FactoryBot.create(:user) }
+  let(:other_user) { FactoryBot.create(:user) }
+  let(:movie) { FactoryBot.create(:movie, user: user) }
+  let(:other_movie) { FactoryBot.create(:movie, user: other_user) }
+  let(:review) { FactoryBot.create(:review) }
+
   describe 'バリデーションに関するテスト' do
     it '名前、メールアドレス、パスワードがある場合は有効' do
       valid_user = FactoryBot.build(:user)
@@ -50,20 +56,6 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe 'own?メソッドに関するテスト' do
-    let(:user) { FactoryBot.create(:user) }
-    let(:movie) { FactoryBot.create(:movie, user: user) }
-    let(:other_movie) { FactoryBot.create(:movie) }
-
-    it '自分が投稿した映画の場合、trueを返す' do
-      expect(user.own?(movie)).to be true
-    end
-
-    it '他のユーザーが投稿した映画の場合、falseを返す' do
-      expect(user.own?(other_movie)).to be false
-    end
-  end
-
   describe 'アソシエーションに関するテスト' do
     before do
       @user = FactoryBot.create(:user)
@@ -101,6 +93,66 @@ RSpec.describe User, type: :model do
       bookmark1 = Bookmark.create(movie: movie1, user: @user)
       bookmark2 = Bookmark.create(movie: movie2, user: @user)
       expect(@user.bookmarks).to include(bookmark1, bookmark2)
+    end
+  end
+
+  describe 'カスタムメソッドに関するテスト' do
+    context 'own?メソッドについて' do
+      it '自分が投稿した映画の場合、trueを返す' do
+        expect(user.own?(movie)).to be true
+      end
+
+      it '他のユーザーが投稿した映画の場合、falseを返す' do
+        expect(user.own?(other_movie)).to be false
+      end
+    end
+
+    context 'いいね機能' do
+      it 'likeメソッドが正しく機能する' do
+        user.like(review)
+        expect(user.like_reviews).to include(review)
+      end
+
+      it 'unlikeメソッドが正しく機能する' do
+        user.like(review)
+        user.unlike(review)
+        expect(user.like_reviews).not_to include(review)
+      end
+
+      it 'like?メソッドが正しく機能する' do
+        user.like(review)
+        expect(user.like?(review)).to be true
+      end
+    end
+
+    context 'ブックマーク機能' do
+      it 'bookmarkメソッドが正しく機能する' do
+        user.bookmark(movie)
+        expect(user.bookmark_movies).to include(movie)
+      end
+
+      it 'unbookmarkメソッドが正しく機能する' do
+        user.bookmark(movie)
+        user.unbookmark(movie)
+        expect(user.bookmark_movies).not_to include(movie)
+      end
+
+      it 'bookmark?メソッドが正しく機能する' do
+        user.bookmark(movie)
+        expect(user.bookmark?(movie)).to be true
+      end
+    end
+
+    context 'ブックマーク数の合計' do
+      it 'total_bookmarks_countメソッドが正しくブックマーク数を返す' do
+        another_user1 = FactoryBot.create(:user)
+        another_user2 = FactoryBot.create(:user)
+        movie1 = FactoryBot.create(:movie, user: user)
+        movie2 = FactoryBot.create(:movie, user: user)
+        another_user1.bookmark(movie1)
+        another_user2.bookmark(movie2)
+        expect(user.total_bookmarks_count).to eq(2)
+      end
     end
   end
 end

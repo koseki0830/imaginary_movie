@@ -5,6 +5,9 @@ class MoviesController < ApplicationController
   def index
     @q = Movie.ransack(params[:q])
     @movies = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+
+    # 検索フォームが使用された場合、@searchedをtrueに設定
+    @searched = !params[:q].blank?
   end
 
   def new

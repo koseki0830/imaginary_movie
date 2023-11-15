@@ -5,6 +5,10 @@ class Movie < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["title", "synopsis"]
   end
+  
+  def self.ransackable_associations(auth_object = nil)
+    ["bookmark_users", "bookmarks", "categories", "movie_categories", "reviews", "user"]
+  end
 
   belongs_to :user
   has_many :movie_categories, dependent: :destroy

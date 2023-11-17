@@ -5,12 +5,12 @@
       <%= link_to t('.new_movie_create'), new_movie_path, class: "bg-blue-700 hover:bg-blue-600 text-white rounded px-4 py-2 w-24" %>
     </div>
     <!-- 検索フォーム -->
-    <div class="mb-4">
+    <div class="mb-8">
       <%= render 'search_form', url: movies_path %>
     </div>
     <!-- ここまで -->
     
-    <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-8" >
+    <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-8 z-40" >
       <% if @searched && @movies.blank? %>
         <h1 class="text-2xl">
           <%= t('.no_search_result') %>

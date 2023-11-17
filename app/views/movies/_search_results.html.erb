@@ -1,6 +1,6 @@
-<ul>
+<ul class="list-group bg-white absolute w-full md:text-sm max-w-max z-50 bg-opacity-95" data-autocomplete-target="results">
   <% movies.each do |movie| %>
-    <li class="w-80 flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-blue-200 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-blue-200 dark:hover:text-gray-300" role="option" data-autocomplete-value="<%= movie.id %>" data-autocomplete-label="<%= movie.title %>">
+    <li class="font-bold border-b borderr-gray-200 w-80 flex items-center gap-x-3.5 py-4 px-4  text-sm text-gray-800 bg-white hover:bg-blue-200 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-blue-200 dark:hover:text-gray-300" role="option" data-autocomplete-value="<%= movie.id %>" data-autocomplete-label="<%= movie.title %>">
       <%= movie.title %>
     </li>
   <% end %>

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
     get :my_reviews_movies, on: :collection
     get :bookmarks, on: :collection
+    get :search, on: :collection
   end
 
   resources :likes, only: %i[create destroy]

@@ -91,3 +91,5 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'kaminari'
 gem 'ransack'
+
+gem 'stimulus-rails'

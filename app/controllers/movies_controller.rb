@@ -59,6 +59,14 @@ class MoviesController < ApplicationController
     @bookmarks_movies = current_user.bookmark_movies.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
+  def search
+    query = params[:q]
+    @movies = Movie.where("title like ?", "%#{query}%")
+    respond_to do |format|
+      format.html { render partial: 'movies/search_results', locals: { movies: @movies } }
+    end
+  end
+
   private
   
   def set_movie

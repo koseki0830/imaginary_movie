@@ -28,6 +28,9 @@ ja:
       fail: 'ユーザー登録ができませんでした'
     edit:
       title: 'プロフィール編集'
+    update:
+      success: 'ユーザー情報を更新しました'
+      fail: 'ユーザー情報が更新できませんでした'
   user_sessions:
     new:
       title: 'ログイン'

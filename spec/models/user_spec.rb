@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) { FactoryBot.create(:user) }
   let(:other_user) { FactoryBot.create(:user) }
-  let(:movie) { FactoryBot.create(:movie, user: user) }
+  let(:movie) { FactoryBot.create(:movie, user:) }
   let(:other_movie) { FactoryBot.create(:movie, user: other_user) }
   let(:review) { FactoryBot.create(:review) }
 
@@ -147,8 +149,8 @@ RSpec.describe User, type: :model do
       it 'total_bookmarks_countメソッドが正しくブックマーク数を返す' do
         another_user1 = FactoryBot.create(:user)
         another_user2 = FactoryBot.create(:user)
-        movie1 = FactoryBot.create(:movie, user: user)
-        movie2 = FactoryBot.create(:movie, user: user)
+        movie1 = FactoryBot.create(:movie, user:)
+        movie2 = FactoryBot.create(:movie, user:)
         another_user1.bookmark(movie1)
         another_user2.bookmark(movie2)
         expect(user.total_bookmarks_count).to eq(2)

@@ -1,10 +1,11 @@
-class LikesController < ApplicationController
+# frozen_string_literal: true
 
-  def create 
+class LikesController < ApplicationController
+  def create
     @review = Review.find(params[:review_id])
     current_user.like(@review)
-  end 
-  
+  end
+
   def destroy
     @review = current_user.likes.find(params[:id]).review
     current_user.unlike(@review)

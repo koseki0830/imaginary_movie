@@ -1,5 +1,6 @@
+# frozen_string_literal: true
+
 class BookmarksController < ApplicationController
-  
   def create
     @movie = Movie.find(params[:movie_id])
     current_user.bookmark(@movie)

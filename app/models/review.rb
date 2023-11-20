@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Review < ApplicationRecord
   belongs_to :movie
   belongs_to :user
@@ -9,9 +11,9 @@ class Review < ApplicationRecord
   validates :content, presence: true
   validates :content, length: { maximum: 140 }
   validates :rating, presence: true
-  validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5  }
+  validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
 
   def comment_count
     comments.count
   end
- end
+end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReviewsController < ApplicationController
   skip_before_action :require_login, only: %i[show]
 
@@ -52,7 +54,7 @@ class ReviewsController < ApplicationController
 
   private
 
-  def review_params 
+  def review_params
     params.require(:review).permit(:content, :contains_spoiler, :rating).merge(movie_id: params[:movie_id])
   end
 end

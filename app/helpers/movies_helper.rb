@@ -1,42 +1,36 @@
+# frozen_string_literal: true
+
 module MoviesHelper
   def text_color_class(movie)
+    colors = {
+      '黒' => 'text-black',
+      '白' => 'text-white',
+      '赤' => 'text-rose-600',
+      '青' => 'text-blue-600'
+    }
+
     color = movie.text_color.presence || '黒'
-    case color
-    when '黒'
-      'text-black'
-    when '白'
-      'text-white'
-    when '赤'
-      'text-rose-600'
-    when '青'
-      'text-blue-600'
-    else
-      'text-black' # デフォルト
-    end
+    colors[color]
   end
 
   def text_size_class(movie)
+    sizes = {
+      '小' => 'text-base',
+      '中' => 'text-lg',
+      '大' => 'text-2xl'
+    }
+
     size = movie.text_size.presence || '中'
-    case size
-    when '小'
-      'text-base'
-    when '中'
-      'text-lg'
-    when '大'
-      'text-2xl'
-    else
-      'text-lg' # デフォルト
-    end
+    sizes[size]
   end
 
   def text_position_class(position)
-    case position
-    when '上部'
-      'items-start'
-    when '中部'
-      'items-center'
-    when '下部'
-      'items-end'
-    end
+    positions = {
+      '上部' => 'items-start',
+      '中部' => 'items-center',
+      '下部' => 'items-end'
+    }
+
+    positions[position]
   end
 end

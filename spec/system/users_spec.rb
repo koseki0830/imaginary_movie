@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe 'Users', type: :system do
   describe 'ユーザー登録' do
     before do
       visit new_user_path
@@ -41,12 +43,12 @@ RSpec.describe "Users", type: :system do
 
     context '有効な情報を入力した場合' do
       it 'ログインが完了し、映画一覧画面へ遷移する' do
-       fill_in 'メールアドレス', with: @user.email
-       fill_in 'パスワード', with: 'password'
-       click_button 'ログインする'
+        fill_in 'メールアドレス', with: @user.email
+        fill_in 'パスワード', with: 'password'
+        click_button 'ログインする'
 
-       expect(page).to have_content 'ログインしました!'
-       expect(current_path).to eq movies_path
+        expect(page).to have_content 'ログインしました!'
+        expect(current_path).to eq movies_path
       end
     end
 
@@ -74,7 +76,7 @@ RSpec.describe "Users", type: :system do
         fill_in 'ユーザーネーム', with: '新しい名前'
         fill_in 'メールアドレス', with: @user.email
         click_button '更新する'
-        
+
         expect(page).to have_content 'ユーザー情報を更新しました'
         expect(current_path).to eq mypage_path
       end

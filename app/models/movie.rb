@@ -1,13 +1,16 @@
+# frozen_string_literal: true
+
 class Movie < ApplicationRecord
   attr_accessor :thumbnail_cache
+
   mount_uploader :thumbnail, ThumbnailUploader
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["title", "synopsis"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[title synopsis]
   end
-  
-  def self.ransackable_associations(auth_object = nil)
-    ["bookmark_users", "bookmarks", "categories", "movie_categories", "reviews", "user"]
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[bookmark_users bookmarks categories movie_categories reviews user]
   end
 
   belongs_to :user
@@ -20,7 +23,8 @@ class Movie < ApplicationRecord
   validates :title, presence: true
   validates :title, length: { maximum: 100 }
   validates :screening_time, presence: true
-  validates :screening_time, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 1000  }
+  validates :screening_time,
+            numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 1000 }
   validates :categories, presence: true
   validates :synopsis, presence: true
   validates :synopsis, length: { maximum: 500 }

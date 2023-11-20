@@ -4,10 +4,10 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   describe 'バリデーションに関するテスト' do
-    it 'ユーザーとレビューの組み合わせはユニークであるべき' do
+    it 'ユーザーといいねの組み合わせはユニークであるべき' do
       user = FactoryBot.create(:user)
       review = FactoryBot.create(:review)
-      first_like = Like.create(user:, review:)
+      Like.create(user:, review:)
       duplicate_like = Like.new(user:, review:)
       expect(duplicate_like).not_to be_valid
     end

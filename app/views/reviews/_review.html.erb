@@ -5,7 +5,7 @@
     <span class="block text-sm text-gray-500"><%= review.created_at.strftime("%Y/%m/%d") %></span>
     <div>
       <span class="star-rating">
-      <span class="star-rating-front" style="width: <%= getPercent(review.rating) %>%;">★★★★★</span>
+      <span class="star-rating-front" style="width: <%= get_percent(review.rating) %>%;">★★★★★</span>
       <span class="star-rating-back">★★★★★</span>
     </div>
     <% if review.contains_spoiler? %>

@@ -6,7 +6,7 @@
       <div class="flex flex-col gap-3 py-4 md:py-8">
         <div>
           <span class="block text-sm font-bold"><%= comment.user.name %></span>
-          <span class="block text-sm text-gray-500"><%= comment.created_at %></span>
+          <span class="block text-sm text-gray-500"><%= comment.created_at.strftime("%Y/%m/%d") %></span>
         </div>
 
         <p class="text-gray-600"><%= comment.content %></p>

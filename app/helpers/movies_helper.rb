@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MoviesHelper
   def text_color_class(movie)
     color = movie.text_color.presence || '黒'

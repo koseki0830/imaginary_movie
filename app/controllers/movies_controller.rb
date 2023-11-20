@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[edit update destroy]
   skip_before_action :require_login, only: %i[index show]
-  
+
   def index
     @q = Movie.ransack(params[:q])
     @movies = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
@@ -61,19 +63,20 @@ class MoviesController < ApplicationController
 
   def search
     query = params[:q]
-    @movies = Movie.where("title like ?", "%#{query}%")
+    @movies = Movie.where('title like ?', "%#{query}%")
     respond_to do |format|
       format.html { render partial: 'movies/search_results', locals: { movies: @movies } }
     end
   end
 
   private
-  
+
   def set_movie
     @movie = current_user.movies.find(params[:id])
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :synopsis, :thumbnail, :thumbnail_cache, :screening_time, :text_position, :text_color, :text_size, :font_type, category_ids: [])
+    params.require(:movie).permit(:title, :synopsis, :thumbnail, :thumbnail_cache, :screening_time, :text_position,
+                                  :text_color, :text_size, :font_type, category_ids: [])
   end
 end

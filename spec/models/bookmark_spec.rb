@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Bookmark, type: :model do
   describe 'バリデーションに関するテスト' do
     let(:user) { FactoryBot.create(:user) }
     let(:movie) { FactoryBot.create(:movie) }
-    let(:bookmark) { FactoryBot.create(:bookmark, user: user, movie: movie) }
+    let(:bookmark) { FactoryBot.create(:bookmark, user:, movie:) }
 
     it 'ユーザーと映画があれば有効' do
       expect(bookmark).to be_valid
@@ -12,7 +14,7 @@ RSpec.describe Bookmark, type: :model do
 
     it '同じユーザーが同じ映画に複数回ブックマークできない' do
       bookmark
-      duplicate_bookmark = Bookmark.new(user: user, movie: movie)
+      duplicate_bookmark = Bookmark.new(user:, movie:)
       duplicate_bookmark.valid?
       expect(duplicate_bookmark.errors[:user_id]).to include('はすでに存在します')
     end
@@ -28,5 +30,5 @@ RSpec.describe Bookmark, type: :model do
       bookmark = FactoryBot.create(:bookmark)
       expect(bookmark.movie).to be_present
     end
-  end  
+  end
 end

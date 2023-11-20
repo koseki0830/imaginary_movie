@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Review, type: :model do
@@ -41,13 +43,13 @@ RSpec.describe Review, type: :model do
   describe 'アソシエーションに関するテスト' do
     it 'movieとの関係性' do
       movie = FactoryBot.build(:movie)
-      review = FactoryBot.build(:review, movie: movie)
+      review = FactoryBot.build(:review, movie:)
       expect(review.movie).to eq(movie)
     end
 
     it 'userとの関係性' do
       user = FactoryBot.build(:user)
-      review = FactoryBot.build(:review, user: user)
+      review = FactoryBot.build(:review, user:)
       expect(review.user).to eq(user)
     end
 
@@ -55,8 +57,8 @@ RSpec.describe Review, type: :model do
       review = FactoryBot.build(:review)
       user1 = FactoryBot.build(:user)
       user2 = FactoryBot.build(:user)
-      Like.create(review: review, user: user1)
-      Like.create(review: review, user: user2)
+      Like.create(review:, user: user1)
+      Like.create(review:, user: user2)
       expect(review.likes.length).to eq(2)
       expect(review.like_users).to include(user1, user2)
     end
@@ -65,17 +67,17 @@ RSpec.describe Review, type: :model do
       review = FactoryBot.create(:review)
       user1 = FactoryBot.create(:user)
       user2 = FactoryBot.create(:user)
-      FactoryBot.create(:comment, review: review, user: user1)
-      FactoryBot.create(:comment, review: review, user: user2)
+      FactoryBot.create(:comment, review:, user: user1)
+      FactoryBot.create(:comment, review:, user: user2)
       expect(review.comments.length).to eq(2)
     end
-  end  
-  
+  end
+
   describe 'comments_countメソッドに関するテスト' do
     it '正しいコメント数を表示する' do
       review = FactoryBot.create(:review)
-      FactoryBot.create(:comment, review: review)
-      FactoryBot.create(:comment, review: review)
+      FactoryBot.create(:comment, review:)
+      FactoryBot.create(:comment, review:)
       expect(review.comment_count).to eq(2)
     end
   end

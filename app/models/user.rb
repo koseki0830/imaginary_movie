@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
@@ -22,16 +24,16 @@ class User < ApplicationRecord
   def own?(object)
     id == object.user_id
   end
-  
+
   # レビューのいいね機能
   def like(review)
     like_reviews << review
   end
-  
+
   def unlike(review)
     like_reviews.destroy(review)
   end
-  
+
   def like?(review)
     like_reviews.include?(review)
   end

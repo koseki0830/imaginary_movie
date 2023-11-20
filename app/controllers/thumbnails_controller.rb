@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require_dependency 'dalle_image_generation_service'
 
 class ThumbnailsController < ApplicationController
-
   def new; end
 
   def create

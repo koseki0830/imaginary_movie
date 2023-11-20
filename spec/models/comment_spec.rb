@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
@@ -22,7 +24,7 @@ RSpec.describe Comment, type: :model do
     before do
       @comment = FactoryBot.create(:comment)
     end
-    
+
     it 'userとの関係性' do
       expect(@comment.user).to be_present
     end

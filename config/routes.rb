@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   root 'top#index'
   get 'login', to: 'user_sessions#new'
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   get 'rankings/sum', to: 'rankings#sum'
 
   resources :users, only: %i[new create update] do
-      get :edit, on: :collection
+    get :edit, on: :collection
   end
 
   resources :movies do
@@ -26,5 +28,4 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   resources :thumbnails, only: %i[create new]
   resources :photos, only: %i[index]
-
 end

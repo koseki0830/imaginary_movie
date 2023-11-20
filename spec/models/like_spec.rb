@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
@@ -5,8 +7,8 @@ RSpec.describe Like, type: :model do
     it 'ユーザーとレビューの組み合わせはユニークであるべき' do
       user = FactoryBot.create(:user)
       review = FactoryBot.create(:review)
-      first_like = Like.create(user: user, review: review)
-      duplicate_like = Like.new(user: user, review: review)
+      first_like = Like.create(user:, review:)
+      duplicate_like = Like.new(user:, review:)
       expect(duplicate_like).not_to be_valid
     end
   end

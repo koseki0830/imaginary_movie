@@ -23,8 +23,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      flash[:notice] = t('.success')
       redirect_to mypage_path
     else
+      flash.now[:alert] = t('.fail')
       render :edit, status: :unprocessable_entity
     end
   end

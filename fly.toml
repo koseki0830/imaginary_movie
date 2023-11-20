@@ -1,16 +1,13 @@
-# fly.toml app configuration file generated for imaginary-movie on 2023-11-20T22:50:56+09:00
+# fly.toml app configuration file generated for imaginary-movie-wispy-field-4126 on 2023-11-21T00:23:10+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "imaginary-movie"
+app = "imaginary-movie-wispy-field-4126"
 primary_region = "nrt"
 console_command = "/rails/bin/rails console"
 
 [build]
-
-[deploy]
-  release_command = "./bin/rails db:prepare"
 
 [http_service]
   internal_port = 3000

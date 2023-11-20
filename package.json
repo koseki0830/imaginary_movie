@@ -25,7 +25,9 @@
     "type": "git",
     "url": "git+https://github.com/runteq/imaginary_movie.git"
   },
-  "keywords": [],
+  "keywords": [
+
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -34,5 +36,6 @@
   "homepage": "https://github.com/runteq/imaginary_movie#readme",
   "engines": {
     "node": "20.9.0"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }

@@ -2,7 +2,7 @@
 
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[edit update destroy]
-  skip_before_action :require_login, only: %i[index show]
+  skip_before_action :require_login, only: %i[index show search]
 
   def index
     @q = Movie.ransack(params[:q])

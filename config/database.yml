@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: imaginary_movie_production
-  username: imaginary_movie
-  password: <%= ENV["IMAGINARY_MOVIE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

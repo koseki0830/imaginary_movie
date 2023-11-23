@@ -83,8 +83,3 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
-
-# ファイル書き込み権限設定
-RUN chmod -R 777 /rails/public/uploads
-RUN chmod -R 777 /rails/public/uploads/movie/thumbnail
-RUN chmod -R 777 /rails/public/uploads/tmp

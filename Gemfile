@@ -90,7 +90,7 @@ gem 'mini_magick'
 gem 'rails-i18n'
 
 # API関連
-gem 'dotenv-rails', groups: %i[development test]
+gem 'dotenv-rails'
 gem 'httparty'
 
 gem 'kaminari'

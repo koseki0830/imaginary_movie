@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/builds/application.css -o ./app/assets/builds/application.css --minify"
+    "build:css": "tailwindcss -i ./app/assets/builds/application.css -o ./app/assets/builds/application.css --minify"
   },
   "description": "## サービス概要 架空の映画についてのレビューを投稿するアプリです。 ユーザーは架空の映画のあらすじを投稿・それに対するレビューを投稿することができます。",
   "version": "1.0.0",

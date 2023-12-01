@@ -1,4 +1,4 @@
-<%= turbo_frame_tag 'new_item' do %>
+<%= turbo_frame_tag 'new_item', style: "position: absolute;" do %>
   <%= form_with(model: [movie, review], local: true) do |f| %>
 
     <div>

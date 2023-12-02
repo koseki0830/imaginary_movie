@@ -1,5 +1,5 @@
 <%= turbo_frame_tag 'new_item', style: "position: absolute;" do %>
-  <%= form_with(model: [movie, review], local: true) do |f| %>
+  <%= form_with(model: [movie, review], local: true, remote: true) do |f| %>
 
     <div>
       <%= f.label :rating %>

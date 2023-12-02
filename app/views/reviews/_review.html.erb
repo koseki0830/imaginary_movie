@@ -1,5 +1,5 @@
 <!-- review - start -->
-<div class="flex flex-col gap-3 rounded-lg border p-4 md:p-6">
+<div class="flex flex-col rounded-lg border p-4 md:p-6">
   <div>
     <span class="block text-sm font-bold md:text-base"><%= link_to review.user.name, movie_review_path(@movie, review) %></span>
     <span class="block text-sm text-gray-500"><%= review.created_at.strftime("%Y/%m/%d") %></span>

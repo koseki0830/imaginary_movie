@@ -14,7 +14,10 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = current_user.reviews.new(review_params)
     if @review.save
-      render movie_path(@review.movie)
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.prepend("movie_reviews", partial: "reviews/review", locals: { review: @review }) }
+        format.html { redirect_to @movie }
+      end
     else
       render :new
     end

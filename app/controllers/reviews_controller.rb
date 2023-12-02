@@ -15,7 +15,10 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.new(review_params)
     if @review.save
       respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.prepend("movie_reviews", partial: "reviews/review", locals: { review: @review }) }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.prepend('movie_reviews', partial: 'reviews/review',
+                                                                     locals: { review: @review })
+        end
         format.html { redirect_to @movie }
       end
     else

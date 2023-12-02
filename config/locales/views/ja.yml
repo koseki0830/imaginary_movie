@@ -67,7 +67,6 @@ ja:
       synopsis: 'あらすじ'
       created_at: '投稿日：'
       create_review: 'レビューを投稿する'
-      no_result: 'レビューは投稿されていません'
     edit:
       title: '映画編集'
       subtitle: '映画情報を編集しましょう'

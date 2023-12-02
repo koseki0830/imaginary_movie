@@ -76,9 +76,6 @@
         <% @reviews.each do |review| %>
             <%= render 'reviews/review', review: review %>
         <% end %>
-      <% else %>
-        <h1 class="text-2xl">
-          <%= t('.no_result') %>
       <% end %>
     </div>
   </div>

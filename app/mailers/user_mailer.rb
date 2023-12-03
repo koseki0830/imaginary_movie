@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UserMailer < ApplicationMailer
-  default from: 'from@example.com'
+  default from: 'noreply@imaginary-movie'
 
   def reset_password_email(user)
     @user = User.find(user.id)

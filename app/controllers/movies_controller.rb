@@ -2,7 +2,7 @@
 
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[edit update destroy]
-  skip_before_action :require_login, only: %i[index show search]
+  skip_before_action :require_login, only: %i[index show search category]
 
   def index
     @q = Movie.ransack(params[:q])
@@ -10,6 +10,8 @@ class MoviesController < ApplicationController
 
     # 検索フォームが使用された場合、@searchedをtrueに設定
     @searched = !params[:q].blank?
+
+    @categories = Category.all
   end
 
   def new
@@ -67,6 +69,12 @@ class MoviesController < ApplicationController
     respond_to do |format|
       format.html { render partial: 'movies/search_results', locals: { movies: @movies } }
     end
+  end
+
+  def category
+    @category = Category.find(params[:category_id])
+    @movies = @category.movies.includes(:user).order(created_at: :desc).page(params[:page])
+    @categories = Category.all
   end
 
   private

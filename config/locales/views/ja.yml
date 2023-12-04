@@ -79,6 +79,8 @@ ja:
     my_reviews_movies:
       title: 'レビューした映画'
       no_result: 'レビュー済みの映画はありません'
+    category:
+      no_result: '映画が登録されていません'
   photos:
     index: 
       title: 'ポスター画像検索'

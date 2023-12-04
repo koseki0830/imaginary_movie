@@ -1,0 +1,10 @@
+<div>
+  <h2 class="text-center font-bold  mb-4">カテゴリー一覧</h2>
+  <div class="grid grid-cols-4 gap-4">
+    <% @categories.each do |category| %>
+      <div class="text-center">
+        <%= link_to category.name, category_movies_path(category_id: category.id), class: "block bg-yellow-200 hover:bg-yellow-400 text-gray-800 px-4 py-2 rounded" %>
+      </div>
+    <% end %>
+  </div>
+</div>

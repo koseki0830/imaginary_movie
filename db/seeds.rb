@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Category.create(name: 'アクション')
+Category.create(name: 'アドベンチャー')
 Category.create(name: 'アニメ')
 Category.create(name: 'SF')
 Category.create(name: 'ホラー')
@@ -10,7 +11,6 @@ Category.create(name: 'サスペンス')
 Category.create(name: 'ロマンス')
 Category.create(name: 'ファンタジー')
 Category.create(name: 'ミュージカル')
-Category.create(name: 'サスペンス')
 Category.create(name: 'ドキュメンタリー')
 Category.create(name: 'スポーツ')
 Category.create(name: '時代劇')

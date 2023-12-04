@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get :my_reviews_movies, on: :collection
     get :bookmarks, on: :collection
     get :search, on: :collection
+    get "category/:category_id",  on: :collection, to: 'movies#category', as: :category
   end
 
   resources :likes, only: %i[create destroy]

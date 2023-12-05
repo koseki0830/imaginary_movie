@@ -85,5 +85,5 @@ production:
   encoding: unicode
   pool: 5
   database: imaginary-movie-db
-  url: url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 

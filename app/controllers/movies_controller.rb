@@ -77,6 +77,10 @@ class MoviesController < ApplicationController
     @categories = Category.all
   end
 
+  def recommendation
+    @movies = current_user.top_categories_movies
+  end
+
   private
 
   def set_movie

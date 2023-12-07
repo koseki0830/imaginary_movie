@@ -13,6 +13,7 @@ ja:
     privacy_policy: 'プライバシーポリシー'
     bookmarks_movies: 'ブックマークした映画'
     reviewed_movies: 'レビューした映画'
+    recommendation: 'あなたへのおすすめ'
     profile_edit: 'ユーザープロフィール編集'
     message:
       require_login: 'ログインしてください'
@@ -81,6 +82,10 @@ ja:
       no_result: 'レビュー済みの映画はありません'
     category:
       no_result: '映画が登録されていません'
+    recommendation:
+      title: 'あなたへのおすすめ'
+      no_result: '現状おすすめできる映画はありません。'
+      description: '投稿した映画やブックマークをした映画の情報をもとにおすすめしております。'
   photos:
     index: 
       title: 'ポスター画像検索'

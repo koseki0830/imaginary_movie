@@ -55,4 +55,24 @@ class User < ApplicationRecord
   def total_bookmarks_count
     movies.joins(:bookmarks).count
   end
+
+  def top_categories_movies
+    # ユーザーが投稿した映画とお気に入りした映画のカテゴリーを集計し、トップ3カテゴリーを取得
+    user_posted_categories = movies.flat_map(&:categories)
+    user_bookmarked_categories = bookmark_movies.flat_map(&:categories)
+
+    category_count = (user_posted_categories + user_bookmarked_categories).group_by(&:itself).transform_values(&:count)
+    top_categories = category_count.sort_by { |_, count| -count }.take(3).to_h.keys
+
+    # トップ3カテゴリーのそれぞれブックマーク数が一番多い映画を取得
+    top_categories.map do |category|
+      Movie.joins(:categories, :bookmarks)
+           .where(categories: { name: category.name })
+           .left_joins(:bookmarks)
+           .group('movies.id')
+           .order('COUNT(bookmarks.id) DESC NULLS LAST')
+           .includes(:user)
+           .first
+    end.compact
+  end
 end

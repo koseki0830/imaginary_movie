@@ -63,7 +63,7 @@ class User < ApplicationRecord
 
     category_count = (user_posted_categories + user_bookmarked_categories).group_by(&:itself).transform_values(&:count)
     top_categories = category_count.sort_by { |_, count| -count }.take(3).to_h.keys
-    
+
     # トップ3カテゴリーのそれぞれブックマーク数が一番多い映画を取得
     top_categories.map do |category|
       Movie.joins(:categories, :bookmarks)

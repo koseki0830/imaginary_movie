@@ -8,16 +8,16 @@
       <!-- logo - end -->
 
       <!-- nav - start -->
-      <nav class="gap-12 lg:flex">
-        <%= link_to t('defaults.to_movie_index'), movies_path, class: "text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
-        <%= link_to t('defaults.to_rankings'), rankings_sum_path, class: "text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
-        <%= link_to t('defaults.to_user_register'), new_user_path, class: "text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
+      <nav class="lg:flex lg:gap-12">
+        <%= link_to t('defaults.to_movie_index'), movies_path, class: "text-lg sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
+        <%= link_to t('defaults.to_rankings'), rankings_sum_path, class: "text-lg sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
+        <%= link_to t('defaults.to_user_register'), new_user_path, class: "text-lg sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
       </nav>
       <!-- nav - end -->
 
       <!-- buttons - start -->
       <div class="-ml-8 flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
-        <%= link_to t('defaults.to_login_page'), login_path, class: "inline-block rounded-lg bg-blue-600 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base" %>
+        <%= link_to t('defaults.to_login_page'), login_path, class: "inline-block rounded-lg bg-blue-600 px-8 py-3 text-center text-lg sm:text-sm lg:text-base font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700" %>
       </div>
       <!-- buttons - end -->
     </header>

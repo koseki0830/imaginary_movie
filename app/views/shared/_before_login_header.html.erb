@@ -8,7 +8,7 @@
       <!-- logo - end -->
 
       <!-- nav - start -->
-      <nav class="lg:flex lg:gap-12">
+      <nav class="lg:flex lg:gap-12 flex-col sm:flex-row">
         <%= link_to t('defaults.to_movie_index'), movies_path, class: "text-xs sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
         <%= link_to t('defaults.to_rankings'), rankings_sum_path, class: "text-xs sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
         <%= link_to t('defaults.to_user_register'), new_user_path, class: "text-xs sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>

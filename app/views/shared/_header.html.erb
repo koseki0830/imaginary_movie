@@ -3,20 +3,20 @@
     <header class="flex items-center justify-between py-1 md:py-1">
       <!-- logo - start -->
       <%= link_to root_path do %>
-        <%= image_tag 'title_logo.png', size: "155x20" %>
+        <%= image_tag 'title_logo.png', size: "155x20", class: "w-24" %>
       <% end %>
       <!-- logo - end -->
 
       <!-- nav - start -->
       <nav class="lg:flex lg:gap-12 flex-col sm:flex-row">
-        <%= link_to t('defaults.to_movie_index'), movies_path, class: "text-xs sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
-        <%= link_to t('defaults.to_rankings'), rankings_sum_path, class: "text-xs sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
-        <%= link_to t('defaults.to_mypage'), mypage_path, class: "text-xs sm:text-sm lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
+        <%= link_to t('defaults.to_movie_index'), movies_path, class: "block text-sm sm:text-base lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
+        <%= link_to t('defaults.to_rankings'), rankings_sum_path, class: "block text-sm sm:text-base lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
+        <%= link_to t('defaults.to_mypage'), mypage_path, class: "block text-sm sm:text-base lg:text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700" %>
       </nav>
       <!-- nav - end -->
 
       <!-- buttons - start -->
-      <div class="-ml-8 flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
+      <div class="-ml-8 flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start mt-20">
         <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "inline-block rounded-lg bg-blue-600 px-8 py-3 text-center text-xs sm:text-xs lg:text-base font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base" %>
       </div>
       <!-- buttons - end -->

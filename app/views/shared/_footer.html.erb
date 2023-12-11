@@ -10,11 +10,11 @@
       <!-- nav - start -->
       <div class="lg:col-span-4 lg:flex lg:justify-center lg:items-center mt-4 lg:mt-0">
         <div class="mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base lg:mr-8"><%= link_to t('defaults.terms_of_service'), terms_path %></div>
-        <div class="mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base"><%= link_to t('defaults.privacy_policy'), '#' %></div>
+        <div class="mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base"><%= link_to t('defaults.privacy_policy'), privacy_policy_path %></div>
       </div>
       <!-- nav - end -->
     </div>
 
-    <div class="border-t border-gray-800 py-8 text-center text-sm text-gray-600">2023 - 虚構映画</div>
+    <div class="border-t border-gray-800 py-8 text-center text-sm text-gray-600"><%= Time.current.year %> - 虚構映画</div>
   </footer>
 </div>

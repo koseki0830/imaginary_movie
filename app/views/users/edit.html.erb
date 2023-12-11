@@ -1,8 +1,16 @@
-<div class="flex">
-  <%= render 'shared/sidebar' %>
+<div class="mb-10 md:mb-16 mt-8">
+  <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl"><%= t('.title') %></h2>
+</div>
+
+<!-- メニューバー -->
+<div class="mt-4">
+  <%= render 'shared/menubar' %>
+</div>
+<!-- ここまで -->
+
+<div class="min-h-screen">
   <div class="container mx-auto">
     <div class="w-full max-w-md mx-auto mt-10">
-      <h1 class="text-2xl font-semibold text-center"><%= t('.title') %></h1>
       <%= form_with model: @user, local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="mb-4">
@@ -13,7 +21,7 @@
         <div class="mb-4">
           <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
           <%= f.email_field :email, class: "w-full p-2 border rounded shadow appearance-none text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-        </div>    
+        </div>      
         <%= f.submit class: "w-full p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded cursor-pointer" %>
       <% end %>
     </div>

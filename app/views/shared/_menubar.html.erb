@@ -1,0 +1,8 @@
+<div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-2">
+    <%= link_to t('defaults.bookmarks_movies'), bookmarks_movies_path, class: "mb-2 flex-1 ml-3 bg-yellow-300 hover:bg-gray-400 text-black rounded px-4 py-2 font-bold text-sm sm:text-sm lg:text-lg" %>
+    <%= link_to t('defaults.reviewed_movies'), my_reviews_movies_movies_path, class: "mb-2 flex-1 ml-3 bg-yellow-300 hover:bg-gray-400 text-black rounded px-4 py-2 font-bold text-sm sm:text-sm lg:text-lg" %>
+    <%= link_to t('defaults.recommendation'), recommendation_movies_path, class: "mb-2 flex-1 ml-3 bg-yellow-300 hover:bg-gray-400 text-black rounded px-4 py-2 font-bold text-sm sm:text-sm lg:text-lg" %>
+    <%= link_to t('defaults.profile_edit'), edit_users_path, class: "mb-2 flex-1 ml-3 bg-yellow-300 hover:bg-gray-400 text-black rounded px-4 py-2 font-bold text-sm sm:text-sm lg:text-lg" %>
+  </div>
+</div>

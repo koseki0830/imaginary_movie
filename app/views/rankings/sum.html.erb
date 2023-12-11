@@ -5,10 +5,10 @@
             <p><%= t('.bookmarks_sum') %><%= user.total_bookmarks_count %></p>
             
             <!-- 最新3作品の表示 -->
-            <div class="flex space-x-20 mt-4">
+            <div class="flex flex-wrap items-sstart space-x-4 mt-4">
               <% user.movies.order(created_at: :desc).limit(3).each do |movie| %>
-                  <div class="text-center">
-                      <%= image_tag movie.thumbnail.url, class: "w-32 h-auto" %>
+                  <div class="text-center w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/6">
+                      <%= image_tag movie.thumbnail.url, class: "w-32 h-auto mb-2" %>
                       <h3 class="text-base font-semibold mb-1 whitespece-pre-line w-32">『<%= link_to movie.title, movie_path(movie) %>』</h3>
                   </div>
               <% end %>

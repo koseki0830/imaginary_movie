@@ -89,7 +89,6 @@ gem 'config'
 gem 'mini_magick'
 gem 'rails-i18n'
 
-# API関連
 gem 'dotenv-rails'
 gem 'httparty'
 
@@ -103,3 +102,7 @@ gem 'sentry-ruby', '~> 5.13'
 gem 'sentry-rails', '~> 5.13'
 
 gem 'fog-aws'
+
+gem 'rails_admin'
+gem 'cancancan'
+gem "sassc-rails"

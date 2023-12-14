@@ -10,7 +10,10 @@
       <!-- nav - start -->
       <div class="lg:col-span-4 lg:flex lg:justify-center lg:items-center mt-4 lg:mt-0">
         <div class="mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base lg:mr-8"><%= link_to t('defaults.terms_of_service'), terms_path %></div>
-        <div class="mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base"><%= link_to t('defaults.privacy_policy'), privacy_policy_path %></div>
+        <div class="mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base lg:mr-8"><%= link_to t('defaults.privacy_policy'), privacy_policy_path %></div>
+        <% if logged_in? && current_user.admin == true %>
+          <div class="mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base lg:mr-8"><%= link_to t('defaults.to_admin_page'), rails_admin_path %></div>
+        <% end %>
       </div>
       <!-- nav - end -->
     </div>

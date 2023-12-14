@@ -18,6 +18,7 @@ ja:
     message:
       require_login: 'ログインしてください'
       delete_confirm: '本当に削除しますか?'
+      not_admin: '管理者権限がありません'
   top:
     index:
       subtitle: '~架空のストーリーを展開しよう~'

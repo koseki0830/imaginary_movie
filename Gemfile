@@ -103,6 +103,6 @@ gem 'sentry-rails', '~> 5.13'
 
 gem 'fog-aws'
 
-gem 'rails_admin'
 gem 'cancancan'
-gem "sassc-rails"
+gem 'rails_admin'
+gem 'sassc-rails'

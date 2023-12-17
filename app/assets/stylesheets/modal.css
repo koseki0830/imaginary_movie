@@ -1,0 +1,26 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  width: 80%;
+  height: 600px;
+  padding: 16px;
+  overflow-y: scroll; /* スクロール設定 */
+}
+
+.modal-inner {
+  height: 100%;
+  overflow-y: scroll; /* スクロール設定 */
+}
+
+.modal-content {
+  min-height: 600px;
+  background-color: white;
+}

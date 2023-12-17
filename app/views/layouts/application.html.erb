@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "pagination", "rating", "thumbnail_text", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "pagination", "rating", "thumbnail_text", "modal", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link rel="stylesheet" href="https://cdn.tailwindcss.com">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
@@ -25,13 +25,6 @@
         <%= render 'shared/flash_message' %>
       <% end %>
       <%= yield %>
-    </div>
-    <div class="modal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <%= turbo_frame_tag 'new_item' %>
-        </div>
-      </div>
     </div>
     <%= render 'shared/footer' %>
   </body>

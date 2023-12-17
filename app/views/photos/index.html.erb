@@ -1,29 +1,37 @@
-<div class="py-6 sm:py-8 lg:py-12">
-  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <div class="mb-10 md:mb-16">
-      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl"><%= t('.title') %></h2>
-      <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">キーワードを入力して映画に合った画像を取得しよう。</p>
-      <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">キーワードは英語の方が多くの検索結果が期待できるよ! 例: 猫→cat</p>
+<%= turbo_frame_tag 'photos_create', style: "position: absolute;" do %>
+  <div class="overlay">
+    <div class="modal">
+        <div class="modal-content">
+          <div class="py-6 sm:py-8 lg:py-12">
+            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+              <div class="mb-10 md:mb-16">
+                <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl"><%= t('.title') %></h2>
+                <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">キーワードを入力して映画に合った画像を取得しよう。</p>
+                <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">キーワードは英語の方が多くの検索結果が期待できるよ! 例: 猫→cat</p>
+              </div>
+    
+              <%= form_with url: photos_path, method: :get, local: true do |f| %>
+                <%= f.text_field :query, placeholder: "キーワードを入力", class: "h-12 w-3/4 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring mb-4" %>
+                <%= f.submit t('.search'), class: "inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base mb-4" %>
+              <% end %>
+
+              <% if @searched %>
+                <% if @photos.present? %>
+                  <div class="flex flex-wrap -m-2">
+                    <% @photos.each do |photo| %>
+                      <div class="w-1/3 p-2">
+                        <%= image_tag photo["src"]["medium"], alt: photo["alt"], class: "some-class-if-needed" %>
+                      </div>
+                    <% end %>
+                  </div>
+                <% else %>
+                  <p><%= t('.no_result') %></p>
+                <% end %>
+              <% end %>
+              <button class="text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md mt-2" data-action="click->modal#close">閉じる</button>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
-</div>
-
-
-<%= form_with url: photos_path, method: :get, local: true do |f| %>
-  <%= f.text_field :query, placeholder: "キーワードを入力", class: "h-12 w-3/4 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
-  <%= f.submit t('.search'), class: "inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base" %>
-<% end %>
-
-<% if @searched %>
-  <% if @photos.present? %>
-    <div class="flex flex-wrap -m-2">
-      <% @photos.each do |photo| %>
-        <div class="w-1/3 p-2">
-          <%= image_tag photo["src"]["medium"], alt: photo["alt"], class: "some-class-if-needed" %>
-        </div>
-      <% end %>
-    </div>
-  <% else %>
-    <p><%= t('.no_result') %></p>
-  <% end %>
 <% end %>

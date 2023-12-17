@@ -12,9 +12,4 @@ export default class extends Controller {
   close() {
     this.modalTarget.classList.add('hidden');
   }
-
-  // モーダルをとじる
-  closeModal() {
-    this.close()
-  }
 }

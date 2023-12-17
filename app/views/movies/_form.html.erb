@@ -21,7 +21,16 @@
   </div>
 
   <div>
-    <%= link_to t('movies._form.to_thumbnail_create'), photos_path, class: "inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base" %>
+    <%= link_to t('movies._form.to_thumbnail_create'), photos_path, data: { modal_target: 'modal', turbo_frame: 'photos_create' }, class: "inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base" %>
+  </div>
+
+  <div data-modal-target="modal"
+     data-controller="modal"
+     data-action="turbo:frame-load->modal#open"
+     class="hidden fixed m-auto w-screen h-screen top-0 left-0 bg-gray-700/50 z-10">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-screen-md w-full bg-white p-10">
+      <%= turbo_frame_tag "photos_create" %>
+    </div>
   </div>
 
   <div>

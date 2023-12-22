@@ -14,7 +14,7 @@
     <%= render 'category_index' %>
     <!-- ここまで -->
     
-    <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-8 z-40" >
+    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-8 z-40" >
       <% if @searched && @movies.blank? %>
         <h1 class="text-2xl">
           <%= t('.no_search_result') %>

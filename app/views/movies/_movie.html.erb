@@ -1,6 +1,6 @@
 <div class="flex flex-col overflow-hidden rounded-lg border bg-white">
   <div class="relative group">
-    <%= image_tag movie.thumbnail.url, class: "w-full h-auto object-cover" %>
+    <%= image_tag movie.thumbnail.url, class: "w-full h-auto sm:aspect-video lg:aspect-video object-cover sm:object-fill lg:object-fill" %>
     <div class="title-container flex inset-0 justify-center <%= text_position_class(movie.text_position) %>">
       <span class="title <%= text_size_class(movie) %> <%= text_color_class(movie) %> font-bold">
         <%= movie.title %>
@@ -25,7 +25,7 @@
     <div class="mt-auto flex items-end justify-between">
       <div class="flex items-center gap-2" >
         <div>
-          <span class="block text-indigo-500"><%= movie.user.name %></span>
+          <span class="text-sm"><%= t('movies._movie.script') %><%= movie.user.name %></span>
           <p class="text-sm"><%= t('movies._movie.created_at') %><%= movie.created_at.strftime("%Y/%m/%d") %></p>
         </div>
       </div>

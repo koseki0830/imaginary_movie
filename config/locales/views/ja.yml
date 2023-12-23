@@ -118,7 +118,8 @@ ja:
       bookmarks_sum: 'ブックマーク数合計：'
   views:
     pagination:
-      first: '最初'
-      previous: '前へ'
-      next: '次へ'
-      last: '最後'
+      first: <i class="fas fa-angle-double-left"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      truncate: '...'

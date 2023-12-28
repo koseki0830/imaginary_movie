@@ -15,7 +15,7 @@ ja:
     bookmarks_movies: 'ブックマークした映画'
     reviewed_movies: 'レビューした映画'
     recommendation: 'あなたへのおすすめ'
-    profile_edit: 'ユーザープロフィール編集'
+    profile_edit: 'プロフィール編集'
     message:
       require_login: 'ログインしてください'
       delete_confirm: '本当に削除しますか?'

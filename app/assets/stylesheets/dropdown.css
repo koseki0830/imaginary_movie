@@ -1,0 +1,53 @@
+
+.menu-list {
+  display: flex;
+  justify-content: center; /* メニューアイテムを中央揃えに */
+}
+.menu-item { 
+  position: relative;
+  transition: background-color .3s; /* 背景色の変化をアニメーション化 */
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* メニューアイテムのホバースタイル */
+.menu-item:hover .drop-menu-list {
+  transform: scaleY(1); /* ドロップダウンメニューの表示 */
+}
+.menu-item:hover {
+  background-color: #696969; /* メニューアイテムのホバー時の背景色 */
+  transition: background-color .3s; /* 背景色の変化をアニメーション化 */
+}
+.drop-menu-item:hover {
+  opacity: .8; /* ドロップダウンメニューアイテムのホバー時の不透明度 */
+  transition: opacity .3s; /* 不透明度の変化をアニメーション化 */
+}
+
+.menu-item a {
+  align-items: center;
+  color: #fff; /* メニューアイテム内のリンクテキストの色 */
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  text-decoration: none; /* リンクの下線を非表示 */
+  width: 120px;
+}
+
+/* ドロップダウンメニュー */
+.drop-menu {
+  position: relative;
+}
+.drop-menu-list {
+  left: 0;
+  position: absolute;
+  top: 100%;
+  transform: scaleY(0); /* ドロップダウンメニューの非表示 */
+  transform-origin: center top; /* 変形を適応する基準を設定 */
+  transition: transform .3s; /* 表示の変化をアニメーション化 */
+  width: max-content;
+  z-index: 1;
+}
+.drop-menu-item {
+  background-color: #696969; /* ドロップダウンメニューの背景色 */
+  transition: opacity .3s; /* 不透明度の変化をアニメーション化 */
+}

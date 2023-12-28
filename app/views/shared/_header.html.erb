@@ -15,11 +15,21 @@
       </nav>
       <!-- nav - end -->
 
-      <!-- buttons - start -->
-      <div class="flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start mt-5 sm:mt-5 lg:mt-0">
-        <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "inline-block rounded-lg bg-blue-600 px-8 py-3 text-center text-xs sm:text-xs lg:text-base font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base" %>
-      </div>
-      <!-- buttons - end -->
+      <nav class="nav-menu mr-20">
+        <ul class="menu-list">
+          <li class="menu-item drop-menu">
+            <i class="far fa-user fa-2xl -mr-16 lg:ml-2"></i>
+            <ul class="drop-menu-list -ml-14 lg:-ml-10">
+              <li class="drop-menu-item">
+                <%= link_to t('defaults.profile_edit'), edit_users_path, class: "text-sm" %>
+              </li>
+              <li class="drop-menu-item">
+                <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "text-sm" %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </header>
   </div>
 </div>

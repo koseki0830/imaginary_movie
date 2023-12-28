@@ -19,6 +19,7 @@ ja:
     message:
       require_login: 'ログインしてください'
       delete_confirm: '本当に削除しますか?'
+      logout_confirm: '本当にログアウトしますか？'
       not_admin: '管理者権限がありません'
   top:
     index:

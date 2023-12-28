@@ -24,7 +24,7 @@
                 <%= link_to t('defaults.profile_edit'), edit_users_path, class: "text-sm" %>
               </li>
               <li class="drop-menu-item">
-                <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "text-sm" %>
+                <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete, turbo_confirm: t('defaults.message.logout_confirm') }, class: "text-sm" %>
               </li>
             </ul>
           </li>

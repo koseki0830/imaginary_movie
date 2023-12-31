@@ -7,18 +7,18 @@
     <!-- メニューバー -->
     <%= render 'shared/menubar' %>
     <!-- ここまで -->
-  
+
     <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-8 z-40">
       <% if @movies.present? %>
         <% @movies.each do |movie| %>
-          <%= render 'movie', movie: movie %>
+          <%= render 'movies/movie', movie: movie %>
         <% end %>
       <% else %>
         <h1 class="text-2xl">
-          <%= t('.no_result') %><br>
-          <%= t('.description') %>
+          <%= t('.no_result') %>
         </h1>
       <% end %>
     </div>
+    <%= paginate @movies %>
   </div>
 </div>

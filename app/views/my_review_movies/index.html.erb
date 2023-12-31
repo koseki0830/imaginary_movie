@@ -9,9 +9,9 @@
     <!-- ここまで -->
   
     <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-8 z-40">
-      <% if @reviews_movies.present? %>
-        <% @reviews_movies.each do |movie| %>
-          <%= render 'movie', movie: movie.movie %>
+      <% if @movies.present? %>
+        <% @movies.each do |movie| %>
+          <%= render 'movies/movie', movie: movie.movie %>
         <% end %>
       <% else %>
         <h1 class="text-2xl">
@@ -19,6 +19,6 @@
         </h1>
       <% end %>
     </div>
-    <%= paginate @reviews_movies %>
+    <%= paginate @movies %>
   </div>
 </div>

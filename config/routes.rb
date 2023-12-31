@@ -21,16 +21,14 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create edit update show destroy] do
       resources :comments, only: %i[create destroy], shallow: true
     end
-    get :my_reviews_movies, on: :collection
-    get :bookmarks, on: :collection
-    get :recommendation, on: :collection
     get :search, on: :collection
     get 'category/:category_id', on: :collection, to: 'movies#category', as: :category
   end
 
   resources :likes, only: %i[create destroy]
-  resources :bookmarks, only: %i[create destroy]
+  resources :bookmarks, only: %i[create destroy index]
+  resources :my_review_movies, only: %i[index]
+  resources :recommends, only: %i[index]
   resources :password_resets, only: %i[new create edit update]
-  resources :thumbnails, only: %i[create new]
   resources :photos, only: %i[index]
 end

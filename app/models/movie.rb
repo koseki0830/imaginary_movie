@@ -13,6 +13,16 @@ class Movie < ApplicationRecord
     %w[bookmark_users bookmarks categories movie_categories reviews user]
   end
 
+  def self.top_movies(category)
+    joins(:categories, :bookmarks)
+      .where(categories: { name: category.name })
+      .left_joins(:bookmarks)
+      .group('movies.id')
+      .order('COUNT(bookmarks.id) DESC NULLS LAST')
+      .includes(:user)
+      .first
+  end
+
   belongs_to :user
   has_many :movie_categories, dependent: :destroy
   has_many :categories, through: :movie_categories

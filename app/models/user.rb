@@ -66,13 +66,7 @@ class User < ApplicationRecord
 
     # トップ3カテゴリーのそれぞれブックマーク数が一番多い映画を取得
     top_categories.map do |category|
-      Movie.joins(:categories, :bookmarks)
-           .where(categories: { name: category.name })
-           .left_joins(:bookmarks)
-           .group('movies.id')
-           .order('COUNT(bookmarks.id) DESC NULLS LAST')
-           .includes(:user)
-           .first
+      Movie.top_movies(category)
     end.compact
   end
 end

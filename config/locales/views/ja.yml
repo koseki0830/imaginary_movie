@@ -8,7 +8,7 @@ ja:
     to_mypage: 'マイページ'
     to_user_register: '会員登録'
     to_login_page: 'ログイン'
-    inquiry: '問い合わせ'
+    inquiry: 'お問い合わせ'
     terms_of_service: '利用規約'
     privacy_policy: 'プライバシーポリシー'
     to_admin_page: '管理者専用ページへ'
@@ -79,15 +79,18 @@ ja:
     update:
       success: '映画情報を更新しました!'
       fail: '映画情報を更新できませんでした'
-    bookmarks:
-      title: 'ブックマークした映画'
-      no_result: 'ブックマークした映画はありません'
-    my_reviews_movies:
-      title: 'レビューした映画'
-      no_result: 'レビュー済みの映画はありません'
     category:
       no_result: '映画が登録されていません'
-    recommendation:
+  bookmarks:
+    index:
+      title: 'ブックマークした映画'
+      no_result: 'ブックマークした映画はありません'
+  my_review_movies:
+    index:
+      title: 'レビューした映画'
+      no_result: 'レビュー済みの映画はありません'
+  recommends:
+    index:
       title: 'あなたへのおすすめ'
       no_result: '現状おすすめできる映画はありません。'
       description: '投稿した映画やブックマークをした映画の情報をもとにおすすめしております。'

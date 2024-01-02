@@ -10,4 +10,8 @@ class BookmarksController < ApplicationController
     @movie = current_user.bookmarks.find(params[:id]).movie
     current_user.unbookmark(@movie)
   end
+
+  def index
+    @movies = current_user.bookmark_movies.includes(:user).order(created_at: :desc).page(params[:page])
+  end
 end

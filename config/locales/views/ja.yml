@@ -24,9 +24,13 @@ ja:
   top:
     index:
       subtitle: '~架空のストーリーを展開しよう~'
+    privacy_policy:
+      title: 'プライバシーポリシー'
+    terms:
+      title: '利用規約'
   users:
     new:
-      title: 'ユーザー登録'
+      title: '会員登録'
     create:
       success: 'ユーザー登録が完了しました!'
       fail: 'ユーザー登録ができませんでした'
@@ -35,6 +39,8 @@ ja:
     update:
       success: 'ユーザー情報を更新しました'
       fail: 'ユーザー情報が更新できませんでした'
+    show:
+      title: 'マイページ'
   user_sessions:
     new:
       title: 'ログイン'
@@ -119,6 +125,7 @@ ja:
       success: 'パスワードを再設定しました'
   rankings:
     sum:
+      title: 'ユーザーランキング'
       bookmarks_sum: 'ブックマーク数合計：'
   views:
     pagination:

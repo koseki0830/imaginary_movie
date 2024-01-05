@@ -10,4 +10,10 @@ module ApplicationHelper
       'bg-red-100 border border-red-500 text-red-700 px-4 py-3 rounded'
     end
   end
+
+  def page_title(page_title = '')
+    base_title = '虚構映画'
+
+    page_title.empty? ? base_title : page_title + " | " + base_title
+  end
 end

@@ -1,4 +1,17 @@
 ja:
+  errors:
+    messages:
+      carrierwave_processing_error: 処理できませんでした
+      carrierwave_integrity_error: は許可されていないファイルタイプです
+      carrierwave_download_error: はダウンロードできません
+      extension_whitelist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
+      extension_blacklist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできないファイルタイプ: %{prohibited_types}"
+      content_type_whitelist_error: "%{content_type}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
+      content_type_blacklist_error: "%{content_type}ファイルのアップロードは許可されていません"
+      rmagick_processing_error: "rmagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
+      mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
+      min_size_error: "を%{min_size}以上のサイズにしてください"
+      max_size_error: "を%{max_size}以下のサイズにしてください"
   defaults:
     title: '虚構映画'
     login: 'ログインする'
@@ -24,9 +37,13 @@ ja:
   top:
     index:
       subtitle: '~架空のストーリーを展開しよう~'
+    privacy_policy:
+      title: 'プライバシーポリシー'
+    terms:
+      title: '利用規約'
   users:
     new:
-      title: 'ユーザー登録'
+      title: '会員登録'
     create:
       success: 'ユーザー登録が完了しました!'
       fail: 'ユーザー登録ができませんでした'
@@ -35,6 +52,8 @@ ja:
     update:
       success: 'ユーザー情報を更新しました'
       fail: 'ユーザー情報が更新できませんでした'
+    show:
+      title: 'マイページ'
   user_sessions:
     new:
       title: 'ログイン'
@@ -119,6 +138,7 @@ ja:
       success: 'パスワードを再設定しました'
   rankings:
     sum:
+      title: 'ユーザーランキング'
       bookmarks_sum: 'ブックマーク数合計：'
   views:
     pagination:

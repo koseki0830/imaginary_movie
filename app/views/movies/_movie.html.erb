@@ -9,7 +9,7 @@
   </div>
   <div class="flex flex-1 flex-col p-4 sm:p-6">
     <h2 class="mb-2 text-lg font-semibold text-gray-800">
-      <%= link_to movie.title, movie_path(movie), class: "transition duration-100 hover:text-indigo-500 active:text-indigo-600" %>
+      <%= link_to truncate(movie.title, length: 40), movie_path(movie), class: "transition duration-100 hover:text-indigo-500 active:text-indigo-600" %>
     </h2>
     <p class="text-sm"><%= t('movies._movie.screening_time') %><%= movie.screening_time %>分<p>
     <p class="text-sm"><%= t('movies._movie.category') %>

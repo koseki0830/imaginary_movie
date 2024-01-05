@@ -9,7 +9,7 @@
       <span class="star-rating-back">★★★★★</span>
     </div>
     <% if review.contains_spoiler? %>
-      <p class="text-xl font-bold"><%= link_to '※このレビューはネタバレを含みます', movie_review_path(@movie, review) %></p>
+      <p class="text-xl text-red-500 font-bold"><%= link_to '※このレビューはネタバレを含みます', movie_review_path(@movie, review) %></p>
     <% else %>
       <p class="text-gray-600"><%= review.content %></p>
     <% end %>

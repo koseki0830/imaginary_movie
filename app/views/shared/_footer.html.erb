@@ -9,11 +9,11 @@
 
       <!-- nav - start -->
       <div class="lg:col-span-4 lg:flex lg:justify-center lg:items-center mt-4 lg:mt-0">
-        <%= link_to t('defaults.terms_of_service'), terms_path, class: "mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base lg:mr-8" %>
-        <%= link_to t('defaults.privacy_policy'), privacy_policy_path, class: "mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base lg:mr-8" %>
-        <%= link_to t('defaults.inquiry'), 'https://docs.google.com/forms/d/e/1FAIpQLScLIrT2z80dqFixbG4KEWrbkV-Jf6NfDxUdecsLbQcGz5xiTw/viewform', class: "mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base lg:mr-8" %>
+        <%= link_to t('defaults.terms_of_service'), terms_path, class: "mb-4 font-bold uppercase tracking-widest text-blue-600 hover:text-red-500 text-sm sm:text-sm lg:text-base lg:mr-8" %>
+        <%= link_to t('defaults.privacy_policy'), privacy_policy_path, class: "mb-4 font-bold uppercase tracking-widest text-blue-600 hover:text-red-500 text-sm sm:text-sm lg:text-base lg:mr-8" %>
+        <%= link_to t('defaults.inquiry'), 'https://docs.google.com/forms/d/e/1FAIpQLScLIrT2z80dqFixbG4KEWrbkV-Jf6NfDxUdecsLbQcGz5xiTw/viewform', class: "mb-4 font-bold uppercase tracking-widest text-blue-600 hover:text-red-500 text-sm sm:text-sm lg:text-base lg:mr-8" %>
         <% if logged_in? && current_user.admin == true %>
-          <%= link_to t('defaults.to_admin_page'), rails_admin_path, class: "mb-4 font-bold uppercase tracking-widest text-gray-600 text-sm sm:text-sm lg:text-base lg:mr-8" %>
+          <%= link_to t('defaults.to_admin_page'), rails_admin_path, class: "mb-4 font-bold uppercase tracking-widest text-blue-600 hover:text-red-500 text-sm sm:text-sm lg:text-base lg:mr-8" %>
         <% end %>
       </div>
       <!-- nav - end -->

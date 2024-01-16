@@ -8,8 +8,8 @@
     </div>
   </div>
   <div class="flex flex-1 flex-col p-4 sm:p-6">
-    <h2 class="mb-2 text-lg font-semibold text-gray-800">
-      <%= link_to truncate(movie.title, length: 40), movie_path(movie), class: "transition duration-100 hover:text-indigo-500 active:text-indigo-600" %>
+    <h2 class="mb-2 text-lg lg:text-xl font-semibold text-blue-600">
+      <%= link_to truncate(movie.title, length: 40), movie_path(movie), class: "transition duration-100 hover:text-red-500 active:text-indigo-600" %>
     </h2>
     <p class="text-sm"><%= t('movies._movie.screening_time') %><%= movie.screening_time %>分<p>
     <p class="text-sm"><%= t('movies._movie.category') %>
@@ -20,7 +20,7 @@
       <p class="mb-8 text-gray-500"><%= movie.synopsis %></p>
     <% else %>
       <p class="mb-8 text-gray-500" ><%= truncate(movie.synopsis, length: 100) %></p>
-      <p class="mb-8 text-gray-500" ><%= link_to '>>続きを読む', movie_path(movie) %></p>
+      <p class="mb-8 text-sky-400" ><%= link_to '>>続きを読む', movie_path(movie) %></p>
     <% end %>
     <div class="mt-auto flex items-end justify-between">
       <div class="flex items-center gap-2" >

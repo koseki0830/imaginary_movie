@@ -81,7 +81,7 @@ ja:
       success: '映画を投稿しました!'
       fail: '映画を投稿できませんでした'
     index:
-      title: '映画一覧'
+      title: '上映中の映画'
       no_result: '映画が登録されていません'
       no_search_result: '検索結果は0件です'
       new_movie_create: '映画を投稿する'

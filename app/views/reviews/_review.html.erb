@@ -1,7 +1,7 @@
 <!-- review - start -->
 <div class="flex flex-col rounded-lg border p-4 md:p-6">
   <div>
-    <span class="block text-sm font-bold md:text-base"><%= link_to review.user.name, movie_review_path(@movie, review) %></span>
+    <span class="block text-sm font-bold md:text-base hover:text-red-500"><%= link_to review.user.name, movie_review_path(@movie, review) %></span>
     <span class="block text-sm text-gray-500"><%= review.created_at.strftime("%Y/%m/%d") %></span>
     <div>
       <span class="star-rating">
@@ -9,7 +9,7 @@
       <span class="star-rating-back">★★★★★</span>
     </div>
     <% if review.contains_spoiler? %>
-      <p class="text-xl text-red-500 font-bold"><%= link_to '※このレビューはネタバレを含みます', movie_review_path(@movie, review) %></p>
+      <p class="text-xl text-red-600 hover:text-red-500 font-bold"><%= link_to '※このレビューはネタバレを含みます', movie_review_path(@movie, review) %></p>
     <% else %>
       <p class="text-gray-600"><%= review.content %></p>
     <% end %>

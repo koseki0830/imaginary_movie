@@ -20,7 +20,7 @@
       <p class="mb-8 text-gray-500"><%= movie.synopsis %></p>
     <% else %>
       <p class="mb-8 text-gray-500" ><%= truncate(movie.synopsis, length: 100) %></p>
-      <p class="mb-8 text-sky-400" ><%= link_to '>>続きを読む', movie_path(movie) %></p>
+      <p class="mb-8 text-sky-400 hover:text-blue-500" ><%= link_to '>>続きを読む', movie_path(movie) %></p>
     <% end %>
     <div class="mt-auto flex items-end justify-between">
       <div class="flex items-center gap-2" >

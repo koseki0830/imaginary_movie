@@ -12,7 +12,7 @@
     
               <%= form_with url: photos_path, method: :get, local: true do |f| %>
                 <%= f.text_field :query, placeholder: "キーワードを入力", class: "h-12 w-3/4 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring mb-4" %>
-                <%= f.submit t('.search'), class: "inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base mb-4" %>
+                <%= f.submit t('.search'), class: "inline-block rounded-lg bg-blue-600 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-blue-500 focus-visible:ring active:bg-indigo-700 md:text-base mb-4" %>
               <% end %>
 
               <% if @searched %>
